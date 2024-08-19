@@ -1,0 +1,179 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0098}
+\newcommand{\sem}{2201}
+\newcommand{\due}{}
+\newcommand{\sect}{10.4}
+\newcommand{\topic}{Adding, Subtracting, and Dividing Radical Expressions}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+
+
+\begin{document}
+\setcounter{section}{10}
+\setcounter{subsection}{3}
+
+\subsection{Adding, Subtracting, and Dividing Radical Expressions}
+
+\subsubsection*{Adding and Subtracting Rational Expressions}
+
+We know that we can combine like terms to simplify expressions. For example,
+\[2x + 3x = (2+3)x = 5x\]
+
+We can add and subtract radicals in the same manner, however, we have to have the same radicand for it to work.
+
+\[2\sqrt{3} + 3\sqrt{3} = (2+3)\sqrt{3} = 5\sqrt{3}\]
+
+If instead, we had unlike radicands, we would treat them as unlike terms and would be unable to combine them:
+
+\[-4\sqrt{7}+8\sqrt{7} + 2\sqrt{3} = (-4+8)\sqrt{7} + 2\sqrt{3} = 4\sqrt{7} + 2\sqrt{3}\]
+
+\vspace{.25in}
+
+\begin{example}
+Simplify by combining like terms:
+\begin{enumerate}
+\item $8\sqrt{13} + 2\sqrt{13}$
+\vspace{1in}
+\item $9\sqrt[3]{7}-6x\sqrt[3]{7}+12\sqrt[3]{7}$
+\vspace{1in}
+\item $7\sqrt[4]{3x} - 2\sqrt[4]{3x} + 2\sqrt[3]{3x}$
+\vspace{1.5in}
+\end{enumerate}
+\end{example}
+
+\newpage
+
+\begin{example}
+Simplify by combining like terms, but reduce the radicals if necessary.
+\begin{enumerate}
+\item $3\sqrt{20} + 5\sqrt{45}$
+\vspace{1.25in}
+\item $3\sqrt{12x} - 6\sqrt{27x}$
+\vspace{1.25in}
+\item $8\sqrt{5} - 6\sqrt{2}$
+\vspace{1.25in}
+\end{enumerate}
+\end{example}
+
+\begin{example}
+Simplify by combining like terms, but reduce the radicals if necessary.
+
+\begin{enumerate}
+\item $3\sqrt[3]{24} - 5\sqrt[3]{81}$
+\vspace{1.25in}
+\item $5\sqrt[3]{x^2y} + \sqrt[3]{27x^5y^4}$
+\vspace{1.25in}
+\end{enumerate}
+\end{example}
+
+\begin{mdframed}
+\textbf{Quotient Rule for Radicals}
+
+Let $\sqrt[n]{a}$ and $\sqrt[n]{b}$ be two real numbers with $b\neq 0$, then \[\sqrt[n]{\dfrac{a}{b}} = \dfrac{\sqrt[n]{a}}{\sqrt[n]{b}}\]
+\end{mdframed}
+
+\vspace{.15in}
+
+\begin{example}
+Simplify using the quotient rule:
+\begin{enumerate}
+\begin{minipage}{.5\textwidth}
+\item $\sqrt[3]{\dfrac{24}{125}}$
+\vspace{1.05in}
+\item $\sqrt{\dfrac{9x^3}{y^{10}}}$
+\vspace{1.05in}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\item $\sqrt[3]{\dfrac{8y^7}{x^{12}}}$
+\vspace{1.05in}
+\item $\sqrt{\dfrac{x^2}{25y^6}}$
+\vspace{1.05in}
+\end{minipage}%
+\end{enumerate}
+\end{example}
+
+\begin{example}
+Divide and simplify as appropriate.
+\begin{enumerate}
+\begin{minipage}{.5\textwidth}
+\item $\dfrac{\sqrt{40x^5}}{\sqrt{2x}}$
+\vspace{1.15in}
+\item $\dfrac{\sqrt{50xy}}{2\sqrt{2}}$
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\item $\dfrac{\sqrt[3]{48xy}}{\sqrt[3]{6xy^{-2}}}$
+\vspace{1.15in}
+\item $\dfrac{\sqrt[3]{16x^5y^2}}{\sqrt[3]{2xy^{-1}}}$
+\end{minipage}%
+\end{enumerate}
+\end{example}
+
+\end{document}

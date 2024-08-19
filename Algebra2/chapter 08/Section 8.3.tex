@@ -1,0 +1,184 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0098}
+\newcommand{\sem}{2201}
+\newcommand{\due}{}
+\newcommand{\sect}{8.3}
+\newcommand{\topic}{The Algebra of Functions}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+\begin{document}
+\setcounter{section}{8}
+\setcounter{subsection}{2}
+
+\subsection{The Algebra of Functions}
+
+In the previous section, we defined functions as relations and discussed how to determine their domain and range given a set of ordered pairs. We continue with this idea in section 8.3 by generalizing the idea of finding domain. While it is possible to also find the range, it is often more difficult to do so with algebra, so we try to find it graphically instead.
+
+\subsubsection*{Finding the Domain}
+Recall that the domain of a relation is the set of $x$ values for which it is defined. When we are given a function that is represented by an equation, we can find the domain algebraically. This idea will be further extended in chapter 10 when we discuss radicals and in chapter 12 when we discuss exponentials and logarithms.
+
+\begin{mdframed}
+\textbf{Process}
+\begin{enumerate}
+\item Is the function a rational function?\\If so, find the values for which it is undefined by setting the denominator equal to zero.
+\item Does the function contain a radical?\\If so, set the radicand greater than or equal to zero and solve for $x$.
+\item If neither of the above apply, the domain is \emph{all real numbers} or $\mathbb{R}$.
+\end{enumerate}
+
+To write the domain, start with the real numbers and remove the values that are not in the domain. It can be written as an interval or an inequality.
+\end{mdframed}
+
+\vspace{.1in}
+
+\begin{example}
+Find the domain of each function.
+\begin{enumerate}
+\item $f(x) = \dfrac{3}{4}x^2 - 2x + 1$
+\vspace{.75in}
+\item $g(x) = \dfrac{2x-1}{7x+14}$
+\vspace{.75in}
+\newpage
+\item $h(x) = 4x^2-11x-3$
+\vspace{.75in}
+\item $f(x) = \dfrac{2x+5}{3x^2-13x-10}$
+\vspace{1.25in}
+\end{enumerate}
+\end{example}
+
+\subsubsection*{Operations on Functions}
+Grade school taught us about the four main operations - addition, subtraction, multiplication and division. These have been used as tools in solving problems in every math class we've ever had. However, in Algebra 2, we take the idea of these operations and extend them to functions. Instead of adding and subtracting numbers, we add and subtract functions. We can also multiply functions together and we can divide them as well - with some caveats.
+
+\begin{mdframed}
+\textbf{Notation}
+
+Let $f$ and $g$ be any two functions. Then we have:
+\begin{enumerate}
+\item Sum: $(f+g)(x) = f(x)+g(x)$
+\vspace{.15in}
+\item Difference: $(f-g)(x) = f(x)-g(x)$
+\vspace{.15in}
+\item Product: $(fg)(x) = f(x)\cdot g(x)$
+\vspace{.15in}
+\item Quotient: $\left(\dfrac{f}{g}\right)(x) = \dfrac{f(x)}{g(x)}$ with $g(x)\neq 0$
+\vspace{.15in}
+\end{enumerate}
+\end{mdframed}
+
+\newpage
+
+\begin{example}
+Let $f(x) = 3x^2+4x-1$ and $g(x) = -2x+4$. Find the following:
+\begin{enumerate}
+\item $(f+g)(x) = $
+\vspace{.7in}
+\item $(f-g)(x) = $
+\vspace{.7in}
+\item $(f+g)(2) = $
+\vspace{.5in}
+\item $(f-g)(2) = $
+\vspace{.5in}
+\end{enumerate}
+\end{example}
+
+
+\begin{example}
+Let $f(x) = \dfrac{3}{x}$ and $g(x) = \dfrac{2}{x-4}$. Find the following:
+\begin{enumerate}
+\item $(f+g)(x) = $
+\vspace{.7in}
+\item the domain of $f+g$
+\vspace{.7in}
+\item $(fg)(x) = $
+\vspace{.7in}
+\item the domain of $fg$
+\end{enumerate}
+\end{example}
+
+\newpage
+
+\begin{example}
+Let $f(x) = x^2-2x$ and $g(x) = x+3$. Find the following:
+\vspace{.2in}
+
+\begin{minipage}{.5\textwidth}
+\begin{enumerate}
+\item $(f+g)(x)$
+\vspace{1.25in}
+\item $(f-g)(x)$
+\vspace{1.25in}
+\item $(fg)(x)$
+\vspace{1.25in}
+\item $\left(\dfrac{f}{g}\right)(x)$
+\vspace{1.25in}
+\end{enumerate}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item $(f+g)(0)$
+\vspace{1.25in}
+\item $(f-g)(2)$
+\vspace{1.25in}
+\item $(fg)(-3)$
+\vspace{1.25in}
+\item $\left(\dfrac{f}{g}\right)(-1)$
+\vspace{1.25in}
+\end{enumerate}
+\end{minipage}%
+\end{example}
+
+\end{document}

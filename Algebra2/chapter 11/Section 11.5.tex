@@ -1,0 +1,171 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+% adds in \varnothing for empty set
+\usepackage{amssymb}
+% adds in formated SI units
+%\usepackage{siunitx}
+\usepackage{pgfplots}
+\usepackage{multirow}
+\usepackage{array}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0098}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{11.5}
+\newcommand{\topic}{Polynomial and Rational Inequalities}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+%\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+%\newmdtheoremenv{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Create bars around subsubsection
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+   
+%%%%%%%%%%%%%%%%%%%%%%%
+% Create line break after definition label
+%%%%%%%%%%%%%%%%%%%%%%%   
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {}{}%\itshape
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newmdtheoremenv{definition}{Definition}[subsection]
+\theoremstyle{break}
+\newtheorem{example}{Example}[subsection]
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start document
+% set section, subsection (use n-1 for sub)
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\setcounter{section}{11}
+\setcounter{subsection}{4}
+
+\subsection{Polynomial and Rational Inequalities}
+\vspace{.15in}
+
+So far this chapter we have solved equations in the format $f(x) = 0$. What if instead we had an inequality that involved a quadratic such as $x^2 - 4 > 0$? We no longer have one or two values of $x$ that satisfy the equation -- we have entire intervals that satisfy it, much like in chapter 9. Unfortunately, solving quadratic inequalities is not as straightforward as linear inequalities, but if you follow the process below, it should make some sense.
+\vspace{.15in}
+
+\begin{mdframed}
+\textbf{Procedure}
+\begin{enumerate}
+\item Solve $f(x) = 0$ to get the boundary points.
+\item Draw a number line and include the boundary points.
+\item Choose a test value in each interval.
+\begin{enumerate}
+\item If $f(x)$ becomes positive, it is positive for all values in the interval.
+\item If $f(x)$ becomes negative, it is negative for all values in the interval.
+\end{enumerate}
+\item Write the solution set choosing the intervals that satisfy the inequality.
+\end{enumerate}
+\end{mdframed}
+
+\begin{example}
+Solve and graph the solution set of $x^2 - 4 > 0$.
+\end{example}
+
+\newpage
+
+\begin{example}
+Solve and graph the solution set of $x^2 - x > 20$.
+\end{example}
+
+\newpage
+
+\begin{example}
+Solve and graph the solution set of $2x^2 \le -6x - 1$.
+\end{example}
+
+\newpage
+
+\subsubsection*{Rational Inequalities}
+\vspace{.15in}
+Rational inequalities are solved using the same methods as quadratic inequalities, but we find the boundaries using a different method. Boundaries are found by setting both the numerator and denominator equal to zero. 
+
+\vspace{.15in}
+\begin{example}
+Solve and graph the solution set of $\dfrac{x-5}{x+2} < 0$.
+\end{example}
+
+\newpage
+
+\begin{example}
+Solve and graph the solution set of $\dfrac{2x}{x+1} \ge 1$.
+\end{example}
+
+\newpage
+
+\begin{example}
+An object is propelled straight up from ground level with an initial velocity of 80 feet per second. The height of the object is given by $h(t) = -16t^2 + 80t$. During which time interval is the object more than 64 feet above the ground?
+\end{example}
+
+\end{document}

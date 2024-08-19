@@ -1,0 +1,93 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0098}
+\newcommand{\sem}{2201}
+\newcommand{\due}{}
+\newcommand{\sect}{9.1}
+\newcommand{\topic}{A Review of Solving Linear Inequalities}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+\begin{document}
+\setcounter{section}{9}
+\setcounter{subsection}{0}
+
+\subsection{\topic}
+
+\begin{mdframed}
+\textbf{Solving a Linear Inequality}
+\begin{enumerate}
+\item Simplify both sides of the inequality
+\item Collect all variable terms on one side and all constant terms on the other
+\item Isolate the variable and solve; be sure to change the direction of the inequality if you multiply or divide by a negative number
+\item State the solution in interval notation and graph on a number line
+\end{enumerate}
+\end{mdframed}
+
+\vspace{.2in}
+
+\begin{example}
+Solve the following: \[3x + 1 > 7x - 15\]
+\vspace{1.5in}
+\end{example}
+
+\begin{example}
+Solve the following: \[\dfrac{x-4}{2} \ge \dfrac{x-2}{3}+\dfrac{5}{6}\]
+\vspace{2in}
+\end{example}
+
+
+
+\end{document}

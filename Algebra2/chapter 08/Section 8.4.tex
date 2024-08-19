@@ -1,0 +1,168 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0098}
+\newcommand{\sem}{2201}
+\newcommand{\due}{}
+\newcommand{\sect}{8.4}
+\newcommand{\topic}{Composite and Inverse Functions}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+\begin{document}
+\setcounter{section}{8}
+\setcounter{subsection}{3}
+
+\subsection{Composite and Inverse Functions}
+
+\subsubsection*{Composite Functions}
+
+Composite functions are \emph{composed} of two other functions. 
+
+\vspace{.2in}
+
+\begin{definition}[Function Composition]
+Function composition uses the following notation:
+\[ (f\circ g)(x) = f(g(x))\]
+
+which reads as "$f$ composed with $g$ at/of $x$". The domain of $f\circ g$ is the set of all values of $x$ such that $x$ is in the domain of $g$ and $g(x)$ is in the domain of $f$.
+\end{definition}
+
+\vspace{.25in}
+
+\begin{example}
+Given $f(x) = 5x+6$ and $g(x) = x^2-1$, find the following:
+\begin{enumerate}
+\item $(f\circ g)(x) = $
+\vspace{1.5in}
+\item $(g\circ f)(x) = $
+\vspace{2.5in}
+\end{enumerate}
+\end{example}
+
+\newpage
+
+\begin{example}
+Given $f(x) = -2x+3$ and $g(x) = 2x^2-4x$, find the following:
+\begin{enumerate}
+\item $(f\circ g)(x) = $
+\vspace{1.5in}
+\item $(g\circ f)(x) = $
+\vspace{2.5in}
+\end{enumerate}
+\end{example}
+
+\subsubsection*{Inverse Functions}
+
+Two functions are said to be inverses if they undo each other; that is, if $(f\circ g)(x) = f(g(x)) = x$. We denote the inverse function of $f(x)$ as $f^{-1}(x)$. The $-1$ in this notation is not an exponent.
+
+\vspace{.2in}
+
+\begin{definition}[Function Inverse]
+Let $f$ and $g$ be two functions such that $f(g(x)) = x$ for all $x$ in the domain of $g$ and $g(f(x)) = x$ for all $x$ in the domain of $f$. The functions $f$ and $g$ are then \emph{inverses}.
+
+\vspace{.2in}
+If we notate the inverse of $f$ as $f^{-1}$, we then have $f(f^{-1}(x)) = x$ and $f^{-1}(f(x)) = x$. The domain of $f$ is the range of $f^{-1}$ and the domain of $f^{-1}$ is the range of $f$.
+\end{definition}
+
+\newpage
+
+\begin{example}
+Show that the functions $f(x) = 3x$ and $g(x) = \dfrac{x}{3}$ are inverses.
+\vspace{3.5in}
+\end{example}
+
+\begin{example}
+Show that the functions $f(x) = 4x-7$ and $g(x) = \dfrac{x+7}{4}$ are inverses.
+\vspace{2.5in}
+\end{example}
+
+\newpage
+
+\begin{mdframed}
+\textbf{Finding the Inverse of a Function}
+\vspace{.1in}
+\begin{enumerate}
+\item Replace $f(x)$ with $y$
+\item Swap $x$ with $y$
+\item Solve the new equation for $y$
+\item Replace $y$ with $f^{-1}$
+\item Verify that $(f\circ f^{-1})(x) = x$
+\end{enumerate}
+
+\end{mdframed}
+
+
+\begin{example}
+Find the inverse of $f(x) = 4x+5$.
+\vspace{3.5in}
+\end{example}
+
+\begin{example}
+Find the inverse of $f(x) = -3x - 7$.
+\vspace{3.5in}
+\end{example}
+
+\newpage
+
+\begin{example}
+Find the inverse of $f(x) = \dfrac{2}{x-1}$.
+\vspace{3.5in}
+\end{example}
+
+\begin{example}
+Find the inverse of $f(x) = \dfrac{2x-1}{x+3}$.
+\vspace{3.5in}
+\end{example}
+\end{document}

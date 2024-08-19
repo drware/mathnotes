@@ -1,0 +1,154 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0098}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{7.2}
+\newcommand{\topic}{Multiplying \& Dividing Rational Expressions}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+
+
+\begin{document}
+\setcounter{section}{7}
+\setcounter{subsection}{1}
+
+\subsection{Multiplying \& Dividing Rational Expressions}
+
+\noindent Multiplying and dividing rational expressions works exactly the same as with fractions.
+\vspace{.25in}
+\noindent If $P, Q, R$, and $S$ are polynomials and $Q\neq 0$, $S\neq 0$, then: \[\dfrac{P}{Q}\cdot\dfrac{R}{S} = \dfrac{PR}{QS}\]
+\vspace{.25in}
+Since rational expressions are essentially fractions, treat them the same way. When you multiply (or divide) fractions, you should \emph{always} make sure that you reduce the fractions before performing the operation(s).
+
+\subsubsection*{Multiplication}
+
+\begin{mdframed}
+\textbf{Method - Multiplication}
+\begin{enumerate}
+\item factor \emph{all} numerators and denominators
+\item divide and cancel common factors
+\item multiply the remaining numerators together and multiply the remaining denominators together
+\end{enumerate}
+\end{mdframed}
+
+\vspace{.25in}
+
+\begin{example}
+Find the following: \[\dfrac{x-5}{x-2}\cdot\dfrac{x^2-4}{9x-45}\]
+
+\end{example}
+
+\newpage
+
+\begin{example}
+Find the following: \[\dfrac{5x+5}{7x-7x^2}\cdot\dfrac{2x^2+x-3}{4x^2-9}\]
+\vspace{2in}
+\end{example}
+
+\subsubsection*{Division}
+
+\noindent When we divide fractions, we follow the mnemonic: \emph{keep} the first, \emph{change} the operation, \emph{flip} the second. We use the same rule with rational expressions. Keep the first fraction as is (but reduced), change the operation from division to multiplication and flip the second fraction (use the reciprocal).
+
+\vspace{.25in}
+
+\begin{mdframed}
+\textbf{Method - Division}
+\begin{enumerate}
+\item factor \emph{all} numerators and denominators
+\item change the operation to multiplication
+\item flip the second fraction (turn it into the reciprocal)
+\item divide and cancel common factors
+\item multiply the remaining numerators together and multiply the remaining denominators together
+\end{enumerate}
+\end{mdframed}
+
+\vspace{.25in}
+
+\begin{example}
+Find the following quotient: \[\dfrac{7}{4}\divisionsymbol\dfrac{21}{8}\]
+\vspace{.75in}
+\end{example}
+
+\begin{example}
+Find the following quotient: \[(x+3)\divisionsymbol\dfrac{x-4}{x+7}\]
+\vspace{1.5in}
+\end{example}
+
+\begin{example}
+Find the following quotient: \[\dfrac{x^2+5x+6}{x^2-25}\divisionsymbol\dfrac{x+2}{x+5}\]
+\vspace{1.5in}
+\end{example}
+
+\begin{example}
+Find the following quotient: \[\dfrac{y^2+3y+2}{y^2+1}\divisionsymbol(5y^2+10y)\]
+\end{example}
+
+\end{document}

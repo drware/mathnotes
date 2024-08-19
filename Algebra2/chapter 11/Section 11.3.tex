@@ -1,0 +1,279 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+% adds in \varnothing for empty set
+\usepackage{amssymb}
+% adds in formated SI units
+%\usepackage{siunitx}
+\usepackage{pgfplots}
+\usepackage{multirow}
+\usepackage{array}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0098}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{11.3}
+\newcommand{\topic}{Quadratics and their Graphs}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+%\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+%\newmdtheoremenv{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Create bars around subsubsection
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+   
+%%%%%%%%%%%%%%%%%%%%%%%
+% Create line break after definition label
+%%%%%%%%%%%%%%%%%%%%%%%   
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {}{}%\itshape
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newmdtheoremenv{definition}{Definition}[subsection]
+\theoremstyle{break}
+\newtheorem{example}{Example}[subsection]
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start document
+% set section, subsection (use n-1 for sub)
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\setcounter{section}{11}
+\setcounter{subsection}{2}
+
+\subsection{Quadratics and their Graphs}
+
+Quadratics can be written in two typical formats, given below. Each format has pros and cons which will be discussed and shown throughout this section.
+\vspace{.15in}
+
+\begin{definition}[Standard Form]
+Standard form of a quadratic is given as $f(x) = ax^2 + bx + c$ where $a\neq 0$.
+\end{definition}
+\vspace{.15in}
+
+\begin{definition}[Vertex Form]
+Vertex form of a quadratic is given as $f(x) = a(x-h)^2 + k$ where $a\neq 0$. The point $(h,k)$ gives the \emph{vertex} of the quadratic.
+\end{definition}
+
+\vspace{.15in}
+
+\begin{definition}[Vertex]
+A \emph{vertex} is otherwise known as a \emph{turning point} in a graph. It represents the maximum or minimum value and is the point at which the function changes between increasing and decreasing.
+\end{definition}
+
+\vspace{.15in}
+
+We can consider two cases for $a$ for either form of a quadratic. Depending on the value of $a$, we are able to determine a few facts about the graph.
+\vspace{.15in}
+\begin{itemize}
+\item $a > 0$
+\begin{itemize}
+\item $f(x)$ opens up
+\item $f(x)$ has a \emph{minimum} value
+\end{itemize}
+\item $a < 0$
+\begin{itemize}
+\item $f(x)$ opens down
+\item $f(x)$ has a \emph{maximum} value
+\end{itemize}
+\end{itemize}
+
+
+
+\newpage
+
+\subsubsection*{Graphing Quadratics}
+We can graph quadratics in a variety of ways -- some easier than others. For example, we could construct a table of points on the graph and plot the points. However, we have new tools at our disposal that we did not have when we first learned how to graph functions in Algebra 1.
+\vspace{.15in}
+
+
+\begin{example}
+Graph the quadratic $f(x) = -2(x-3)^2 + 8$.
+\vfill
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.7\linewidth,
+  axis lines=middle,
+  grid,
+  ymin=-9,
+  ymax=9,
+  ytick={-8,...,8},
+  yticklabels={,,},
+  ylabel={y},
+  xmin=-9,
+  xmax=9,
+  xtick={-8,...,8},
+  xticklabels={,,},
+  xlabel={x}]
+
+\addplot[draw=none] coordinates {(1,1)};
+\end{axis}
+\end{tikzpicture}
+\end{figure}
+\end{example}
+
+\newpage
+
+Quadratics are easiest to graph when given in vertex form since we can easily pick out the vertex. When given in standard form however, we have to do some extra work in the form of \emph{completing the square}.
+\vspace{.15in}
+
+\begin{example}
+Convert the following standard form equation into vertex form and identify the vertex. Then graph the \emph{parabola}.
+\[f(x) = 2x^2 + 8x - 1\]
+\vfill
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.7\linewidth,
+  axis lines=middle,
+  grid,
+  ymin=-9,
+  ymax=9,
+  ytick={-8,...,8},
+  yticklabels={,,},
+  ylabel={y},
+  xmin=-9,
+  xmax=9,
+  xtick={-8,...,8},
+  xticklabels={,,},
+  xlabel={x}]
+
+\addplot[draw=none] coordinates {(1,1)};
+\end{axis}
+\end{tikzpicture}
+\end{figure}
+\end{example}
+
+\newpage
+
+\begin{example}
+Identify the vertex of the following quadratic. Then graph the \emph{parabola}.
+\[f(x) = -x^2 - 2x + 1\]
+\vfill
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.7\linewidth,
+  axis lines=middle,
+  grid,
+  ymin=-9,
+  ymax=9,
+  ytick={-8,...,8},
+  yticklabels={,,},
+  ylabel={y},
+  xmin=-9,
+  xmax=9,
+  xtick={-8,...,8},
+  xticklabels={,,},
+  xlabel={x}]
+
+\addplot[draw=none] coordinates {(1,1)};
+\end{axis}
+\end{tikzpicture}
+\end{figure}
+\end{example}
+
+\newpage
+
+\subsubsection*{Applications of Quadratics}
+
+As stated on the first page of this section, the function $f(x)$ has a minimum if $a > 0$ and has a maximum if $a < 0$. Use this information to solve the following examples.
+\vspace{.15in}
+
+\begin{example}
+You have 100 yards of fencing to enclose a rectangular field. What are the dimensions and area of the largest field possible?
+\vspace{2.75in}
+\end{example}
+
+\begin{example}
+Find the dimensions and area of the largest possible field (referring to the previous example) if you only fence in 3 of the 4 sides.
+\end{example}
+
+\newpage
+
+\begin{example}
+Among all pairs of numbers whose sum is 16, find a pair with the largest possible \emph{product}. What is the product?
+\vspace{3in}
+\end{example}
+
+\begin{example}
+Among all pairs of numbers whose difference is 24, find the pair whose product is smallest.
+\end{example}
+
+
+\end{document}

@@ -1,0 +1,248 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+% adds in \varnothing for empty set
+\usepackage{amssymb}
+% adds in formated SI units
+%\usepackage{siunitx}
+%\usepackage{pgfplots}
+\usepackage{multirow}
+\usepackage{array}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0098}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{12.2}
+\newcommand{\topic}{Logarithmic Functions}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+%\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+%\newmdtheoremenv{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Create bars around subsubsection
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+   
+%%%%%%%%%%%%%%%%%%%%%%%
+% Create line break after definition label
+%%%%%%%%%%%%%%%%%%%%%%%   
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {}{}%\itshape
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newmdtheoremenv{definition}{Definition}[subsection]
+\theoremstyle{break}
+\newtheorem{example}{Example}[subsection]
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start document
+% set section, subsection (use n-1 for sub)
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\setcounter{section}{12}
+\setcounter{subsection}{1}
+
+\subsection{Logarithmic Functions}
+\vspace{.15in}
+
+\begin{definition}[Logarithm]\mbox{}
+\vspace{-.15in}
+For $x> 0,\; b>0,\; b\neq 1$,
+\[ y = \log_b\left(x\right) \equiv b^y = x\]
+
+\end{definition}
+\vspace{.15in}
+
+\subsubsection*{Circle Trick}
+\vspace{.25in}
+\[ y = \log_b\left(x\right) \]
+\vspace{.25in}
+
+\begin{example}
+Write each of the following in exponential form.
+\begin{enumerate}
+\item $3 = \log_7{\left(x\right)}$
+\vspace{.5in}
+\item $2 = \log_b{\left(25\right)}$
+\vspace{.5in}
+\item $y = \log_4{\left(26\right)}$
+\end{enumerate}
+\end{example}
+
+\newpage
+
+\begin{example}
+Write each exponential as a logarithm.
+\begin{enumerate}
+\item $2^5 = x$
+\vspace{.25in}
+\item $b^3 = 27$
+\vspace{.25in}
+\item $e^y = 33$
+\vspace{.25in}
+\end{enumerate}
+\end{example}
+
+\begin{example}
+Evaluate.
+\begin{enumerate}
+\item $\log_{10}{\left(100\right)} = $
+\vspace{.25in}
+\item $\log_{3}{\left(3\right)} = $
+\vspace{.25in}
+\item $\log_{36}{\left(6\right)} = $
+\vspace{.25in}
+\end{enumerate}
+\end{example}
+
+\subsubsection*{Basic Log Properties}
+\begin{enumerate}
+\item $\log_b{(b)} = 1$
+\vspace{.1in}
+\item $\log_b{(1)} = 0$
+\vspace{.1in}
+\item $\log_b{\left(b^x\right)} = x$
+\vspace{.1in}
+\item $b^{\log_b{(x)}} = x$
+\end{enumerate}
+
+\newpage
+
+\begin{example}
+Evaluate.
+\begin{enumerate}
+\item $\log_{7}{\left(7\right)} = $
+\vspace{.25in}
+\item $\log_{8}{\left(1\right)} = $
+\vspace{.25in}
+\item $\log_{7}{\left(7^8\right)} = $
+\vspace{.25in}
+\item $3^{\log_{3}{\left(15\right)}} = $
+\vspace{.25in}
+\end{enumerate}
+\end{example}
+
+\subsubsection*{Graphs of $\log_b{(x)}$}
+\vspace{2in}
+\begin{itemize}
+\item Domain: $\mathbb{Z}^+ = (0,\infty)$
+\item Range: $\mathbb{R} = (-\infty,\infty)$
+\item Logarithmic functions always have two guaranteed points: $(1,0)$ and $(b,1)$.
+\item The $y$-axis is a horizontal asymptote.
+\item If $b>1$, it is an \emph{increasing} function.
+\item If $0 < b < 1$, it is a \emph{decreasing} function.
+\end{itemize}
+
+\newpage
+
+\begin{example}
+Find the domain of each log function.
+\begin{enumerate}
+\item $h(x) = \log_4{(x-5)}$
+\vspace{1.75in}
+\item $g(x) = \log_6{(2x - 4)}$
+\vspace{1.75in}
+\item $f(x) = \log_3{(6-4x)} + 3$
+\end{enumerate}
+\end{example}
+
+\newpage
+
+\subsubsection*{Special Logs}
+\begin{enumerate}
+\begin{minipage}{.5\textwidth}
+\item Common Log
+\begin{itemize}
+\item Base 10
+\item $\log{(x)} = \log_{10}{(x)}$
+\end{itemize}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\item Natural Log
+\begin{itemize}
+\item Base $e$
+\item $\ln{(x)} = \log_{e}{(x)}$
+\end{itemize}
+\end{minipage}%
+\end{enumerate}
+\vspace{.15in}
+
+\begin{example}
+Find each of the following values:
+\begin{enumerate}
+\item $\log{(1000)} = $
+\vspace{.5in}
+\item $\ln{(50} = $
+\vspace{.5in}
+\end{enumerate}
+\end{example}
+
+
+\end{document}

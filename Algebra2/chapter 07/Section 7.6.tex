@@ -1,0 +1,121 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0098}
+\newcommand{\sem}{2201}
+\newcommand{\due}{}
+\newcommand{\sect}{7.6}
+\newcommand{\topic}{Solving Rational Equations}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+\begin{document}
+\setcounter{section}{7}
+\setcounter{subsection}{5}
+
+\subsection{Solving Rational Equations}
+
+We solve proportions by cross multiplying, as below.
+\begin{example}
+Solve: $\dfrac{x}{10} = \dfrac{3}{5}$
+\vspace{1.5in}
+
+\end{example}
+
+What if we have multiple terms on each side? We can remove them by multiplying both sides by the LCD which removes the denominator for us - removing the fact that they are rational expressions.
+
+\begin{example}
+Solve: $\dfrac{x}{6} = \dfrac{1}{6} + \dfrac{x}{8}$
+\vspace{2.5in}
+\end{example}
+
+If we have an $x$ or any other variable in the denominator, we need to consider where our expressions are undefined (Section 7.1). If our answer makes the expression undefined, we call it an \emph{extraneous solution}. An extraneous solution is a solution that we can find algebraically, but does not actually solve the problem. We are not guaranteed to have extraneous solutions, but we do need to check for them.
+
+\newpage
+
+\begin{example}
+Solve: $\dfrac{5}{2x} = \dfrac{17}{18} - \dfrac{1}{3x}$
+\vspace{3.5in}
+\end{example}
+
+\begin{example}
+Solve: $x + \dfrac{1}{x} = \dfrac{5}{2}$
+\end{example}
+
+\newpage
+
+\begin{example}
+Solve: $\dfrac{3x}{x^2-9} + \dfrac{1}{x-3} = \dfrac{3}{x+3}$
+\vspace{3.5in}
+\end{example}
+
+\begin{example}
+Solve: $\dfrac{x}{x-3} = \dfrac{3}{x-3} + 9$
+\end{example}
+
+\newpage
+
+\subsubsection*{Solving Literal Equations}
+Remember that a literal equation is an equation containing all or mostly variables. We can solve these for a specific value by rearranging them.
+
+\begin{example}
+Solve for $x$: $a = \dfrac{b}{x+c}$
+\vspace{2.75in}
+\end{example}
+
+\begin{example}
+Solve for $x$: $\dfrac{1}{x} + \dfrac{1}{y} = \dfrac{1}{z}$
+\end{example}
+
+
+\end{document}

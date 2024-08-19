@@ -1,0 +1,187 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0098}
+\newcommand{\sem}{2201}
+\newcommand{\due}{}
+\newcommand{\sect}{10.2}
+\newcommand{\topic}{Rational Exponents}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+\begin{document}
+\setcounter{section}{10}
+\setcounter{subsection}{1}
+
+\subsection{Rational Exponents}
+
+\begin{mdframed}
+\textbf{Rational Exponent Definitions}
+
+For some integers $m$ and $n$, we have the following:
+\begin{enumerate}
+\item $a^{\sfrac{1}{n}} = \sqrt[n]{a}$
+\item $a^{\sfrac{m}{n}} = \sqrt[n]{a^m} = \sqrt[n]{a}^m$
+\end{enumerate}
+\end{mdframed}
+
+\vspace{.25in}
+\begin{example}
+Rewrite each of the following using radical notations. Simplify if possible.
+\begin{enumerate}
+\begin{minipage}{.5\textwidth}
+\item $25^{\sfrac{1}{2}}$
+\vspace{1.25in}
+\item $(-8)^{\sfrac{1}{3}}$
+\vspace{1.25in}
+\item $(5xy^2)^{\sfrac{1}{4}}$
+\vspace{1.25in}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\item $8^{\sfrac{4}{3}}$
+\vspace{1.25in}
+\item $25^{\sfrac{3}{2}}$
+\vspace{1.25in}
+\item $-81^{\sfrac{3}{4}}$
+\vspace{1.25in}
+\end{minipage}%
+\end{enumerate}
+\end{example}
+
+
+\newpage
+
+\begin{example}
+Rewrite each of the following using rational exponents. Simplify if possible.
+\begin{enumerate}
+\begin{minipage}{.5\textwidth}
+\item $\sqrt[4]{5xy}$
+\vspace{1.25in}
+\item $\sqrt[5]{\dfrac{a^3b}{2}}$
+\vspace{1.25in}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\item $\sqrt[3]{6^4}$
+\vspace{1.25in}
+\item $\sqrt[5]{2xy}^7$
+\vspace{1.25in}
+\end{minipage}%
+\end{enumerate}
+\end{example}
+
+\subsubsection*{Properties of Rational Exponents}
+\begin{enumerate}[itemsep=.5cm,label=\theenumi)]
+\adjustbox{valign=t}{\begin{minipage}{.5\textwidth}
+\item Product Rule:\\$a^m\cdot a^n = a^{m+n}$
+\item Quotient Rule:\\$\dfrac{a^m}{a^n} = a^{m-n}$
+\item Power-to-Power Rule:\\$\left(a^m\right)^n = a^{mn}$
+\item Product-to-Power Rule:\\$\left(ab\right)^m = a^mb^m$
+\item Quotient-to-Power Rule:\\$\left(\dfrac{a}{b}\right)^m = \dfrac{a^m}{b^m}$
+\end{minipage}}%
+\adjustbox{valign=t}{\begin{minipage}{.5\textwidth}
+\item $a^m = a^n$ iff $m = n$
+\item $a^m = b^m$ iff $a = b, m\neq 0$
+\item Negative Exponents:\\\vspace{-.35in}
+	\begin{enumerate}
+	\item $a^{-m} = \dfrac{1}{a^m}$
+	\item $ba^{-m} = \dfrac{b}{a^m}$
+	\item $\dfrac{1}{a^{-m}} = a^m$
+	\item $\dfrac{b}{a^{-m}} = ba^m$
+	\end{enumerate}
+\item Zero Exponent Rule:\\$a^0 = 1$
+\end{minipage}}%
+\end{enumerate}
+
+\newpage
+
+\begin{example}
+Use the properties of rational exponents to simplify the following statements:
+\begin{enumerate}
+\begin{minipage}{.5\textwidth}
+\item $7^{\sfrac{1}{2}}\cdot 7^{\sfrac{1}{3}}$
+\vspace{1.25in}
+\item $\dfrac{50x^{\sfrac{1}{3}}}{10x^{\sfrac{4}{3}}}$
+\vspace{1.25in}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\item $\left(9.1^{\sfrac{2}{5}}\right)^{\sfrac{3}{4}}$
+\vspace{1.25in}
+\item $\left(x^{-\sfrac{3}{5}}y^{\sfrac{1}{4}}\right)^{\sfrac{1}{3}}$
+\vspace{1.25in}
+\end{minipage}%
+\end{enumerate}
+\end{example}
+
+\begin{example}
+Use the properties of rational exponents to simplify the following radical statements:
+\begin{enumerate}
+\begin{minipage}{.5\textwidth}
+\item $\sqrt[6]{x^3}$
+\vspace{1.25in}
+\item $\sqrt[3]{8x^{12}}$
+\vspace{1.25in}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\item $\dfrac{\sqrt{x}}{\sqrt[3]{x}}$
+\vspace{1.25in}
+\item $\sqrt{\sqrt[3]{x}}$
+\vspace{1.25in}
+\end{minipage}%
+\end{enumerate}
+\end{example}
+
+\end{document}

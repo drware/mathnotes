@@ -1,0 +1,172 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0098}
+\newcommand{\sem}{2201}
+\newcommand{\due}{}
+\newcommand{\sect}{10.3}
+\newcommand{\topic}{Multiplying and Simplifying Radical Expressions}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+\begin{document}
+\setcounter{section}{10}
+\setcounter{subsection}{2}
+
+\subsection{Multiplying and Simplifying Radical Expressions}
+
+\begin{mdframed}
+\textbf{Product Rule for Radicals}
+
+If $\sqrt[n]{a}$ and $\sqrt[n]{b}$ are real numbers, then we have \[\sqrt[n]{a}\cdot\sqrt[n]{b} = \sqrt[n]{ab}\] which follows from the rule for multiplying like-bases with exponents.
+\end{mdframed}
+
+\vspace{.25in}
+
+\begin{example}
+Find each of the following products:
+\begin{enumerate}
+\begin{minipage}{.5\textwidth}
+\item $\sqrt{5}\sqrt{11}$
+\vspace{1.5in}
+\item $\sqrt[3]{6}\sqrt[3]{10}$
+\vspace{1.5in}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\item $\sqrt{x+4}\sqrt{x-4}$
+\vspace{1.5in}
+\item $\sqrt[7]{2x}\sqrt[7]{6x^3}$
+\vspace{1.5in}
+\end{minipage}%
+\end{enumerate}
+\end{example}
+
+
+\newpage
+
+\begin{mdframed}
+\textbf{Simplifying Radical Expressions by Factoring}
+
+We say that a radical expression (with index $n$) is simplified if the radicand has no factors that are perfect $n$ powers. Use the following method to simplify:
+\begin{enumerate}
+\item Write the radicand as the product of two factors where one of the factors has an exponent that is a multiple of $n$
+\item Use the product rule to take the $n^{th}$ root of each factor
+\item Find the $n^{th}$ root of the perfect $n^{th}$ power.
+\end{enumerate}
+\end{mdframed}
+
+\vspace{.25in}
+
+\begin{example}
+Simplify by factoring:
+\begin{enumerate}
+\begin{minipage}{.5\textwidth}
+\item $\sqrt{80}$
+\vspace{1.5in}
+\item $\sqrt[4]{32}$
+\vspace{1.5in}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\item $\sqrt[3]{40}$
+\vspace{1.5in}
+\item $\sqrt{200x^2y}$
+\vspace{1.5in}
+\end{minipage}%
+\end{enumerate}
+\end{example}
+
+\vspace{.25in}
+
+\begin{example}
+Simplify the following radical function: \[f(x) = \sqrt{3x^2-12x+12}\]
+\vspace{1.5in}
+\end{example}
+
+\begin{example}
+Simplify the following expression: \[\sqrt{x^9y^{11}z^3}\]
+\vspace{1.5in}
+\end{example}
+
+\begin{example}
+Simplify the following expression: \[\sqrt[3]{40x^{10}y^{14}}\]
+\vspace{1.5in}
+\end{example}
+
+\begin{example}
+Simplify the following expression: \[\sqrt[5]{32x^{12}y^2z^8}\]
+\vspace{1.5in}
+\end{example}
+
+\newpage
+
+\begin{example}
+Multiply then simplify: \[\sqrt{6}\cdot\sqrt{2}\]
+\vspace{1.25in}
+\end{example}
+
+\begin{example}
+Multiply then simplify: \[10\sqrt[3]{16}\cdot 5\sqrt[3]{2}\]
+\vspace{1.25in}
+\end{example}
+
+\begin{example}
+Multiply then simplify: \[\sqrt[4]{4x^2y}\cdot\sqrt[4]{8x^6y^3}\]
+\vspace{1.25in}
+\end{example}
+
+
+\end{document}

@@ -1,0 +1,158 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+% adds in \varnothing for empty set
+\usepackage{amssymb}
+% adds in formated SI units
+%\usepackage{siunitx}
+%\usepackage{pgfplots}
+\usepackage{multirow}
+\usepackage{array}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0098}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{12.3}
+\newcommand{\topic}{Properties of Logarithms}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+%\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+%\newmdtheoremenv{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Create bars around subsubsection
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+   
+%%%%%%%%%%%%%%%%%%%%%%%
+% Create line break after definition label
+%%%%%%%%%%%%%%%%%%%%%%%   
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {}{}%\itshape
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newmdtheoremenv{definition}{Definition}[subsection]
+\theoremstyle{break}
+\newtheorem{example}{Example}[subsection]
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start document
+% set section, subsection (use n-1 for sub)
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\setcounter{section}{12}
+\setcounter{subsection}{2}
+
+\subsection{Properties of Logarithms}
+\vspace{.15in}
+
+\begin{enumerate}
+\item $\log_b{\left(mn\right)} = \log_b{(m)} + \log_b{(n)}$
+\vspace{.15in}
+\item $\log_b{\left(\dfrac{m}{n}\right)} = \log_b{(m)} - \log_b{(n)}$
+\vspace{.15in}
+\item $\log_b{\left(m^p\right)} = p\log_b{(m)}$
+\vspace{.15in}
+\end{enumerate}
+
+\begin{example}
+Expand and rewrite. Simplify where appropriate.
+\begin{enumerate}
+\item $\log_8{\left(\dfrac{23}{x}\right)} = $
+\vspace{.75in}
+\item $\ln{\left(\dfrac{e^5}{11}\right)} = $
+\vspace{.75in}
+\item $\ln{\sqrt[3]{x}} = $
+\vspace{.75in}
+\item $\log{[(x+2)(x+2)]} = $
+\newpage
+
+\item $\log_b{\left(x^4\sqrt[3]{y}\right)} = $
+\vspace{1in}
+\item $\log_5{\left(\dfrac{\sqrt{x}}{25y^{-3}}\right)} = $
+\vspace{1in}
+\end{enumerate}
+\end{example}
+
+\begin{example}
+Write each as a single log.
+\begin{enumerate}
+\item $\log{(25)} + \log{(4)} = $
+\vspace{1in}
+\item $\log{(7x^2 - 6x)} - \log{(x)} = $
+\vspace{1in}
+\item $2\ln{(x)} + \dfrac{1}{3}\ln{(x+5)} = $
+\newpage
+\item $2\log{(x-3)} - \log{x} = $
+\vspace{1in}
+\item $\dfrac{1}{4}\log_b{(x)} - 2\log_b{(5)} - 10\log_b{(y)} = $
+\end{enumerate}
+\end{example}
+
+\end{document}

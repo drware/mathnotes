@@ -1,0 +1,199 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0098}
+\newcommand{\sem}{2201}
+\newcommand{\due}{}
+\newcommand{\sect}{10.1}
+\newcommand{\topic}{Radical Expressions and Functions}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+\begin{document}
+\setcounter{section}{10}
+\setcounter{subsection}{0}
+
+\subsection{Radical Expressions and Functions}
+
+\begin{definition}[Principal Square Root]
+If $a$ is a non-negative real number, then the non-negative number $b$ such that $b^2 = a$, denoted by $b=\sqrt{a}$, is the principal square root of $a$.
+\end{definition}
+\vspace{.25in}
+\begin{example}
+Evaluate each of the following square roots.
+\begin{enumerate}
+\begin{minipage}{.3\textwidth}
+\item $\sqrt{64}$
+\vspace{.5in}
+\item $-\sqrt{49}$
+\vspace{.5in}
+\end{minipage}%
+\begin{minipage}{.3\textwidth}
+\item $\sqrt{\dfrac{16}{25}}$
+\vspace{.5in}
+\item $\sqrt{0.0081}$
+\vspace{.5in}
+\end{minipage}%
+\begin{minipage}{.3\textwidth}
+\item $\sqrt{9+16}$
+\vspace{.5in}
+\item $\sqrt{9}+\sqrt{16}$
+\vspace{.5in}
+\end{minipage}%
+\end{enumerate}
+\end{example}
+\vspace{.25in}
+
+\subsubsection*{Functions with Square Roots}
+
+We can define the square root as a function with $f(x) = \sqrt{x}$. Both the domain and range of this function are the non-negative numbers - $[0,\infty)$.
+
+\vspace{.25in}
+
+To evaluate square root functions, we treat them the same as anything - make the substitution for the independent variable and simplify.
+
+\vspace{.25in}
+
+\begin{example}
+Find the indicated value for each given function:
+\begin{enumerate}
+\item $f(3)$ when $f(x) = \sqrt{12x-20}$
+\vspace{1.25in}
+\item $g(-5)$ when $g(x) = -\sqrt{9-3x}$
+
+\end{enumerate}
+\end{example}
+
+\newpage
+
+The square root function is only defined when the \emph{radicand} - the portion under the radical - is non-negative. If we need to find the domain of a square root function, set the radicand greater than or equal to 0 and solve for $x$. State the domain using whichever method is specified.
+
+\vspace{.25in}
+
+\begin{example}
+Find the domain of each of the following functions:
+\begin{enumerate}
+\item $f(x) = \sqrt{9x-27}$
+\vspace{1.5in}
+\item $g(x) = -3\sqrt{2(3x-4)}+4$
+\vspace{1.5in}
+\end{enumerate}
+\end{example}
+
+\subsubsection*{Simplifying $\sqrt{a^2}$}
+
+For any real value of $a$, we have \[\sqrt{a^2} = \abs{a}\]
+
+\begin{example}
+Simplify:
+\begin{enumerate}
+\item $\sqrt{(-7)^2}$
+\vspace{1.25in}
+\newpage
+\item $\sqrt{(x+8)^2}$
+\vspace{1.25in}
+\item $\sqrt{49x^{10}}$
+\vspace{1.25in}
+\item $\sqrt{x^2-6x+9}$
+\vspace{1.5in}
+\end{enumerate}
+\end{example}
+
+\subsubsection*{Cube Roots}
+Similar to a square root, a cube root is given as $\sqrt[3]{a} = b$ where $b^3 = a$. The $3$ is the \emph{index} of the radical. Unlike the square root, however, the cube root has negative numbers in its domain. Both the domain and range of $f(x) = \sqrt[3]{x}$ are $(-\infty,\infty)$.
+
+\begin{example}
+Find the indicated value for each given function:
+\begin{enumerate}
+\item $f(127)$ when $f(x) = \sqrt[3]{x-2}$
+\vspace{1.5in}
+\newpage
+\item $g(-7)$ when $g(x) = \sqrt[3]{8x-8}$
+\vspace{1.5in}
+\end{enumerate}
+\end{example}
+
+\subsubsection*{Simplifying $\sqrt[3]{a^3}$}
+For any real number $a$, we have \[\sqrt[3]{a^3} = a\].
+
+\begin{example}
+Simplify the following: \[\sqrt[3]{-27x^3}\]
+\end{example}
+
+
+\subsubsection*{Simplifying Odd or Even Roots}
+
+For any real number $a$:
+\begin{itemize}
+\item If $n$ is even, $\sqrt[n]{a^n} = \abs{a}$.
+\item If $n$ is odd, $\sqrt[n]{a^n} = a$.
+\end{itemize}
+
+\begin{example}
+Find each of the following:
+\begin{enumerate}
+\item $\sqrt[4]{(x+6)^4}$
+\vspace{1.5in}
+
+\newpage
+\item $\sqrt[5]{(3x-2)^5}$
+\vspace{1.5in}
+\item $\sqrt[6]{(-8)^6}$
+\vspace{1.5in}
+\end{enumerate}
+\end{example}
+
+
+\end{document}

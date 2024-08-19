@@ -1,0 +1,220 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0098}
+\newcommand{\sem}{2201}
+\newcommand{\due}{}
+\newcommand{\sect}{10.5}
+\newcommand{\topic}{Multiplying with Multiple Terms \& Rationalizing}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+
+
+\begin{document}
+\setcounter{section}{10}
+\setcounter{subsection}{4}
+
+\subsection{Multiplying with More than One Term \& Rationalizing Denominators}
+
+\subsubsection*{Multiplying Radical Expressions with Multiple Terms}
+
+The same methods of FOILing, distributing, etc., that we've been using for polynomials still apply for radicals.
+\vspace{.25in}
+\begin{example}
+Multiply each of the following. Be sure to simplify if possible.
+\begin{enumerate}
+\begin{minipage}{.5\textwidth}
+\item $\sqrt{6}\left(x+\sqrt{10}\right)$
+\vspace{1.5in}
+\item $\sqrt[3]{y}\left(\sqrt[3]{y^2} - \sqrt[3]{7}\right)$
+\vspace{1.5in}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\item $\left(6\sqrt{5}+3\sqrt{2}\right)\left(2\sqrt{5}-4\sqrt{2}\right)$
+\vspace{1.5in}
+\item $\left(5\sqrt{2}+2\sqrt{3}\right)\left(4\sqrt{2}-3\sqrt{3}\right)$
+\vspace{1.5in}
+\end{minipage}%
+\end{enumerate}
+\end{example}
+In Algebra 1, we were introduced to \emph{special forms} for multiplication -- binomial sums, binomial differences and differences of squares. These rules still hold for radicals.
+
+\begin{mdframed}
+\textbf{Special Forms}
+\begin{enumerate}
+\item $(a+b)^2 = a^2 + 2ab + b^2$
+\item $(a-b)^2 = a^2 - 2ab + b^2$
+\item $(a-b)(a+b) = a^2 - b^2$
+\end{enumerate}
+\end{mdframed}
+
+\newpage
+
+\begin{example}
+Multiply each of the following special forms. Be sure to simplify if possible.
+\begin{enumerate}
+\begin{minipage}{.5\textwidth}
+\item $\left(\sqrt{5}+\sqrt{6}\right)^2$
+\vspace{1.5in}
+\item $\left(\sqrt{6}-\sqrt{5}\right)^2$
+\vspace{1.5in}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\item $\left(\sqrt{a}-\sqrt{7}\right)\left(\sqrt{a}+\sqrt{7}\right)$
+\vspace{1.5in}
+\item $\left(\sqrt{2x}-\sqrt{3b}\right)\left(\sqrt{2x}+\sqrt{3b}\right)$
+\vspace{1.5in}
+\end{minipage}%
+\end{enumerate}
+\end{example}
+
+
+
+
+\subsubsection*{Rationalizing Denominators with One Term}
+
+\emph{Rationalizing a denominator} is the process of rewriting an expression so that there are no radicals in the denominator. To rationalize denominators, we need to use the trick of multiplying by 1 (written in a specific way). If we have squareroots, we use whatever the denominator. If we have a higher index radical, we need to choose what to multiply by carefully.
+
+\vspace{.25in}
+
+\begin{example}
+Rationalize each denominator.
+\begin{enumerate}
+\begin{minipage}{.5\textwidth}
+\item $\dfrac{\sqrt{7}}{\sqrt{3}}$
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\item $\dfrac{\sqrt{5}}{\sqrt{12}}$
+\end{minipage}%
+\end{enumerate}
+\end{example}
+
+\newpage
+
+If, however, we have an index greater than 2, we need to choose the radicand in such a way that we have exponents that are multiples of the index -- allowing us to simplify the radical in the denominator.
+
+\vspace{.25in}
+
+\begin{example}
+Rationalize each denominator.
+\begin{enumerate}
+\begin{minipage}{.5\textwidth}
+\item $\dfrac{\sqrt[3]{2}}{\sqrt[3]{9}}$
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\item $\dfrac{\sqrt[4]{2}}{\sqrt[4]{3}}$
+\end{minipage}%
+\end{enumerate}
+\end{example}
+
+\vspace{1.5in}
+
+If the radicand contains multiple factors (constants and variables), we need to make sure that each factor in the radicand ends with an exponent that is a multiple of the index. This is true regardless of the index.
+
+\vspace{.25in}
+
+\begin{example}
+Rationalize each denominator.
+\begin{enumerate}
+\begin{minipage}{.33\textwidth}
+\item $\sqrt{\dfrac{2x}{7x}}$
+\end{minipage}%
+\begin{minipage}{.33\textwidth}
+\item $\dfrac{\sqrt[3]{x}}{\sqrt[3]{9y}}$
+\end{minipage}%
+\begin{minipage}{.33\textwidth}
+\item $\dfrac{6x}{\sqrt[5]{8x^2y^4}}$
+\end{minipage}%
+\end{enumerate}
+\end{example}
+
+\newpage
+
+\subsubsection*{Rationalizing Denominators with Multiple Terms}
+
+If the denominator contains two or more terms where at least one of them is a radical, we need to multiply by the \emph{conjugate} of the denominator. The conjugate is an idea that will get used a few times in various forms throughout this class.
+\vspace{.2in}
+To find the conjugate of a radical expression, change the operation to the opposite - addition to subtraction, subtraction to addition. 
+
+\vspace{.2in}
+Why use the conjugate? The conjugate allows us to use the difference of squares method to simplify the denominator. If the denominator is $a + b$, then the conjugate is $a - b$. Multiplying them together gives us \[(a+b)(a-b) = a^2 - b^2\]
+
+\begin{example}
+Rationalize the following: \[\dfrac{18}{2\sqrt{3}+3}\]
+\vspace{2in}
+\end{example}
+
+\begin{example}
+Rationalize the following: \[\dfrac{3+\sqrt{7}}{\sqrt{5}-\sqrt{2}}\]
+\vspace{2in}
+\end{example}
+
+
+
+\end{document}

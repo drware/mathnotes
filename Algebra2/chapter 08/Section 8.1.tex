@@ -1,0 +1,193 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0098}
+\newcommand{\sem}{2201}
+\newcommand{\due}{}
+\newcommand{\sect}{8.1}
+\newcommand{\topic}{Introduction to Functions}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+\begin{document}
+\setcounter{section}{8}
+\setcounter{subsection}{1}
+
+Recall that an \emph{ordered pair} given by $(x,y)$ associates a value $x$, the independent variable, with a value $y$, the dependent variable. We call this association a \emph{relation}.
+\vspace{.2in}
+\begin{definition}[Relation]
+any set of ordered pairs; the set of all of the first values of the ordered pairs makes the \emph{domain} and the set of all of the second values makes the \emph{range} of the relation
+\end{definition}
+
+\begin{example}
+Find the domain and range of the following relation:
+\[\{(0,2),(1,4),(2,6),(3,8)\}\]
+\begin{itemize}
+\item Domain: 
+\vspace{.5in}
+\item Range:
+\vspace{.5in}
+\end{itemize}
+\end{example}
+
+\begin{example}
+Relations do not have to have solely numeric values. In this example, find the domain and range of the given relation.
+\[\{(\text{Algebra 1},25),(\text{Algebra 2},26),(\text{Statistics},30),(\text{Fundamentals},23)\}\]
+\begin{itemize}
+\item Domain: 
+\vspace{.5in}
+\item Range:
+\vspace{.5in}
+\end{itemize}
+\end{example}
+
+If a relation follows a specific set of rules, we call it a \emph{function}.
+
+\begin{definition}[Function]
+a relation that has both of the following properties:
+\begin{enumerate}
+\item each value in the domain corresponds to a single value in the range
+\item each value in the range corresponds to one or more values in the domain
+\end{enumerate}
+
+The \emph{domain} of a function is the set of all $x$ values for which it is defined. The \emph{range} of a function is the set of all $y$ values that are associated with values in the domain.
+\end{definition}
+
+\newpage
+
+\begin{example}
+Determine whether the given relation is a function. If it is, state the domain and range.
+\begin{enumerate}
+\item $A = \{(1,2),(3,4),(5,6),(5,7)\}$
+\vspace{.5in}
+\item $B = \{(2,1),(4,3),(5,6),(6,5)\}$
+\vspace{.5in}
+\item $C = \{(a,2),(b,3),(c,2),(a,3)\}$
+\vspace{.5in}
+\end{enumerate}
+\end{example}
+
+In math class, we concern ourselves with functions that are represented by some equation. If you recall linear equations from chapter 3, we were essentially using functions, but without the name. If we have an equation $y = mx + b$, we have a \emph{relation} from the domain, $x$, to the range, $y$, given by the equation.
+
+\vspace{.2in}
+
+In these style of functions, we relate the \emph{independent variable} (typically $x$) to the \emph{dependent variable} (typically $y$). We say that a \emph{dependent variable is a function of the independent variable}; that is, we say that $y$ is a function of $x$.
+\vspace{.2in}
+\begin{definition}[independent variable]
+the manipulated variable; the variable which we choose values for; typically $x$
+\end{definition}
+
+\begin{definition}[dependent variable]
+the variable whose value \emph{depends} on the value of another variable; typically $y$
+\end{definition}
+
+\newpage
+
+\subsubsection*{Function Notation}
+
+We use special notation for functions in that we give each function a name. Commonly, $f$ is used as the function name in examples, but we try to give a name that is appropriate for the context, much like we do with variables.
+
+\vspace{.2in}
+
+The notation $f(x)$ reads as "f of x" and implies that $f$ is the function name and $x$ is the independent variable. This is synonymous with saying $y = f(x)$; a notation commonly used when graphing functions.
+\vspace{.2in}
+\begin{example}
+Give an appropriate function name and independent variable for each of the following situations.
+\begin{enumerate}
+\item the height of a ball as it changes over time
+\vspace{.25in}
+\item the temperature of a room given how many people are in it
+\vspace{.25in}
+\item the heart rate of a person (bpm) based on their age (years)
+\vspace{.25in}
+\end{enumerate}
+\end{example}
+
+\newpage
+\subsubsection*{Function Evaluation}
+
+To \emph{evaluate} a function means to plug a value into the function in place of the independent variable and then simplify. This was used in Algebra 1 under the topic of "evaluation". This process is also called \emph{function replacement}.
+
+\begin{example}
+Find each of the following.
+\begin{itemize}
+\item $f(6)$ when $f(x) = 4x+5$
+\vspace{1.5in}
+\item $g(-5)$ when $g(x) = 3x^2 - 10$
+\vspace{1.5in}
+\item $h(-4)$ when $h(r) = r^2 - 7r +2$
+\vspace{1.5in}
+\item $f(3)$ when $f(x) = \dfrac{3x^2-4x-4}{ x^2-2x-8} $
+\vspace{1.5in}
+\end{itemize}
+\end{example}
+\newpage
+\begin{example}
+Find each of the following when $f(x) = 2x+3$.
+\begin{itemize}
+\item $f(0)$
+\vspace{1in}
+\item $f(b)$
+\vspace{1in}
+\item $f(2a)$
+\vspace{1in}
+\item $f(a+b)$
+\vspace{1in}
+\end{itemize}
+\end{example}
+\begin{example}
+Find $f(a+1)$ when $f(x) = x^2 - x + 1$.
+\end{example}
+
+
+\end{document}

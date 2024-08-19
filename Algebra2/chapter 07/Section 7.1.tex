@@ -1,0 +1,151 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0098}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{7.1}
+\newcommand{\topic}{Rational Expressions \& Simplifying}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+
+
+\begin{document}
+\setcounter{section}{7}
+\setcounter{subsection}{0}
+
+\subsection{Rational Expressions \& Simplifying}
+
+\begin{mdframed}
+\begin{definition}[rational expression]
+the quotient of two polynomials; $\dfrac{x-3}{2}$, $\dfrac{-3}{x^2+4x}$
+\end{definition}
+\end{mdframed}
+\vspace{.25in}
+
+\noindent Rational expressions are \emph{undefined} for a value of $x$ if the denominator becomes 0.
+
+\vspace{.25in}
+
+\begin{example}
+Find the numbers which make the given rational expressions undefined.
+\begin{enumerate}
+\item $\dfrac{7x-28}{8x-4}$
+\vspace{1.25in}
+\item $\dfrac{8x-40}{x^2+3x-28}$
+\vspace{1.25in}
+\end{enumerate}
+\end{example}
+
+\subsubsection*{Simplifying Rational Expressions}
+\noindent A rational expression is considered \emph{simplified} when the numerator and denominator share no factors, much like a reduced fraction.
+
+\vspace{.25in}
+\begin{mdframed}
+\textbf{Process}
+\begin{enumerate}
+\item factor both the numerator and denominator fully
+\item divide \& cancel any common factors
+\end{enumerate}
+\end{mdframed}
+
+\newpage
+
+\begin{example}
+Simplify fully: \[\dfrac{7x+28}{21x}\]
+\vspace{1.5in}
+\end{example}
+\begin{example}
+Simplify fully: \[\dfrac{x^3-x^2}{7x-7}\]
+\vspace{1.5in}
+\end{example}
+\begin{example}
+Simplify fully: \[\dfrac{x^2-1}{x^2+2x+1}\]
+\vspace{1.5in}
+\end{example}
+
+\newpage
+
+\subsubsection*{Opposite Factors}
+\noindent Remember that there are two values we can always factor out: 1 (boring) and -1 (less boring and sometimes useful).
+
+\noindent If we have something similar to $\dfrac{x-2}{2-x}$ we may notice that there is some similarity between the numerator and denominator. If we were to factor out a -1 from either, we would see that they share a common factor that could be canceled.
+
+\vspace{.25in}
+
+\begin{example}
+Simplify fully: \[\dfrac{x-2}{2-x}\]
+\vspace{1.5in}
+\end{example}
+
+\begin{example}
+Simplify fully: \[\dfrac{9x^2-49}{28-12x}\]
+\end{example}
+
+\end{document}

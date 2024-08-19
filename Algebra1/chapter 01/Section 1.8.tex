@@ -1,0 +1,214 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0097}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{1.8}
+\newcommand{\topic}{Exponents \& Order of Operations}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+\newmdtheoremenv{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+
+
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{7}
+
+\subsection{Exponents \& Order of Operations}
+
+\vspace{.25in}
+
+\begin{definition}[Exponentiation]
+shorthand notation for repeated multiplication\\ $b^n = b\cdot b\cdot b\cdots$
+\end{definition}
+
+\vspace{.15in}
+
+\begin{example}
+Evaluate each of the follow exponents.
+\begin{enumerate}
+\item $4^2$
+\item $6^3$
+\item $(-4)^3$
+\item $(-1)^4$
+\item $-1^4$
+\end{enumerate}
+\end{example}
+
+\vspace{.15in}
+
+\subsubsection*{Simplifying Algebraic Expressions}
+\begin{itemize}
+\item variable terms are like terms \emph{if and only if} the exponent on the variables match
+\item the same rules as always apply
+\end{itemize}
+\vspace{.15in}
+
+\begin{minipage}{.33\textwidth}
+\begin{example}\mbox{}\\
+Simplify: $16x^2 + 5x^2$
+\end{example}
+\end{minipage}%
+\begin{minipage}{.33\textwidth}
+\begin{example}\mbox{}\\
+Simplify: $7x^3 + x^3$
+\end{example}
+\end{minipage}%
+\begin{minipage}{.33\textwidth}
+\begin{example}\mbox{}\\
+Simplify: $10x^2 + 8x^3$
+\end{example}
+\end{minipage}%
+
+\newpage
+
+\subsubsection*{PEMDAS - Order of Operations}
+
+\begin{minipage}{.65\textwidth}
+\begin{enumerate}
+\item do all operations within grouping symbols: (), [], \{\}
+\item evaluate all exponents
+\item multiply and divide in the order they appear from left to right
+\item add and subtract in the order they appear from left to right
+\end{enumerate}
+\end{minipage}%
+\begin{minipage}{.1\textwidth}
+\;
+\end{minipage}%
+\begin{minipage}{.25\textwidth}
+\begin{mdframed}
+\textbf{P} - Parenthesis\\
+\textbf{E} - Exponents\\
+\textbf{M} - Multiplication\\
+\textbf{D} - Division\\
+\textbf{A} - Addition\\
+\textbf{S} - Subtraction
+\end{mdframed}
+\end{minipage}%
+
+\vspace{.5in}
+\noindent
+\begin{minipage}{.5\textwidth}
+\begin{example}\mbox{}\\
+Simplify: $20 + 4\cdot 3 - 17$
+\vspace{1.75in}
+\end{example}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\begin{example}\mbox{}\\
+Simplify: $6^2 - 24 \divisionsymbol 2^3\cdot 3 - 1$
+\vspace{1.75in}
+\end{example}
+\end{minipage}%
+\\
+\begin{minipage}{.5\textwidth}
+\begin{example}\mbox{}\\
+Simplify: $(3\cdot 2)^2$
+\vspace{1.25in}
+\end{example}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\begin{example}\mbox{}\\
+Simplify: $3\cdot 2^2$
+\vspace{1.25in}
+\end{example}
+\end{minipage}%
+\\
+
+\begin{example}
+Simplify fully: \[4[3(6-11)+5]\]
+\end{example}
+
+\newpage
+
+\begin{example}
+Simplify fully: \[\left(-\dfrac{1}{2}\right)^2 - \left(\dfrac{7}{10}-\dfrac{8}{15}\right)^2(-18)\]
+\vspace{3in}
+\end{example}
+
+\begin{example}
+Simplify fully: \[25\divisionsymbol 5 + 3[4+2(7-9)^3]\]
+\end{example}
+
+\newpage
+
+\begin{example}
+Simplify fully: \[\dfrac{2(3-12)+6\cdot 4}{2^4+1}\]
+\vspace{2.5in}
+\end{example}
+
+\begin{example}
+Evaluate $-x^2-7x$ for $x = -2$.
+\vspace{1.5in}
+\end{example}
+
+\begin{example}
+Simplify fully: \[14x^2+5 - [7(x^2-2)+4]\]
+\end{example}
+\end{document}

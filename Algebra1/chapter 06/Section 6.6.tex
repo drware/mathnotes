@@ -1,0 +1,171 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+% adds in \varnothing for empty set
+\usepackage{amssymb}
+% adds in formated SI units
+%\usepackage{siunitx}
+\usepackage{pgfplots}
+\usepackage{multirow}
+\usepackage{array}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0097}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{6.6}
+\newcommand{\topic}{Solving Quadratics by Factoring}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+%\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+%\newmdtheoremenv{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Create bars around subsubsection
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+   
+%%%%%%%%%%%%%%%%%%%%%%%
+% Create line break after definition label
+%%%%%%%%%%%%%%%%%%%%%%%   
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {}{}%\itshape
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newmdtheoremenv{definition}{Definition}[subsection]
+\theoremstyle{break}
+\newtheorem{example}{Example}[subsection]
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start document
+% set section, subsection (use n-1 for sub)
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\setcounter{section}{6}
+\setcounter{subsection}{5}
+
+\subsection{Solving Quadratics by Factoring}
+
+\vspace{.15in}
+
+\begin{definition}[Quadratic Equation]
+A quadratic equation is an equation of the form $ax^2 + bx + c = 0$ where $a \neq 0$.
+\end{definition}
+\vspace{.15in}
+
+\noindent We solve a quadratic equation by using the \emph{zero-product principle} to find the \emph{roots/zeroes/solutions/$x$-intercepts}.
+\vspace{.15in}
+
+\begin{definition}[Zero-Product Principle]
+If $ab = 0$, then $a = 0$, $b=0$ or both $a$ and $b$ equal 0.
+\end{definition}
+\vspace{.15in}
+
+\begin{example}
+Solve the equation and check.
+\[(2x+1)(x-4) = 0\]
+\vspace{2in}
+\end{example}
+
+\begin{mdframed}
+\textbf{Solving a Quadratic Equation by Factoring}
+\begin{enumerate}
+\item Rewrite the equation in standard form.
+\item Factor using an appropriate method.
+\item Apply the zero-product rule and set each factor equal to 0.
+\item Solve the equations from the previous step.
+\item Check your solutions.
+\end{enumerate}
+\end{mdframed}
+\vspace{.15in}
+
+\begin{example}
+Solve for $x$: $x^2 - 6x + 5 = 0$
+\vspace{2.25in}
+\end{example}
+
+\begin{example}
+Solve for $x$: $4x^2 = 2x$
+\vspace{2.25in}
+\end{example}
+
+\begin{example}
+Solve for $x$: $x^2 = 10x - 25$
+\end{example}
+\newpage
+
+\begin{example}
+Solve for $x$: $16x^2 = 25$
+\vspace{2.25in}
+\end{example}
+
+\begin{example}
+Solve for $x$: $(x-5)(x-2) = 28$
+\end{example}
+
+\end{document}

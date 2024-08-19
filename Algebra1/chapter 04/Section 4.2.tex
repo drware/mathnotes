@@ -1,0 +1,188 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+% adds in \varnothing for empty set
+\usepackage{amssymb}
+% adds in formated SI units
+%\usepackage{siunitx}
+\usepackage{pgfplots}
+\usepackage{multirow}
+\usepackage{array}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0097}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{4.2}
+\newcommand{\topic}{The Substitution Method}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+%\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+%\newmdtheoremenv{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Create bars around subsubsection
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+   
+%%%%%%%%%%%%%%%%%%%%%%%
+% Create line break after definition label
+%%%%%%%%%%%%%%%%%%%%%%%   
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {}{}%\itshape
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newmdtheoremenv{definition}{Definition}[subsection]
+\theoremstyle{break}
+\newtheorem{example}{Example}[subsection]
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start document
+% set section, subsection (use n-1 for sub)
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\setcounter{section}{4}
+\setcounter{subsection}{1}
+
+\subsection{The Substitution Method}
+
+\vspace{.15in}
+
+\begin{mdframed}
+\textbf{Process - Substitution Method}
+\begin{enumerate}
+\item Solve one of the equations for either $x$ or $y$.
+\item Substitute this new equation into the other equation.
+\item Solve this new one-variable equation.
+\item Plug this value into either of the original equations to find the missing value.
+\item Write the solution as a point.
+\end{enumerate}
+\end{mdframed}
+
+\vspace{.15in}
+
+\begin{example}
+Solve the following with the substitution method:
+\[\systeme{-5x + y = -13, 2x + 3y = 12}\]
+\vspace{2in}
+\end{example}
+
+\newpage
+
+\begin{example}
+Solve the following with the substitution method:
+\[\systeme{3x + 2y = -1, x - y = 3}\]
+\vspace{3in}
+\end{example}
+
+\begin{example}
+Solve the following with the substitution method:
+\[\systeme{3x + y = -5, y = -3x + 3}\]
+\end{example}
+
+\newpage
+
+\begin{example}
+Solve the following with the substitution method:
+\[\systeme{-3x + y = -4, 9x - 3y = 12}\]
+\end{example}
+\newpage 
+
+\begin{example}
+\textbf{The Supply \& Demand of Pizza}
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{c | c | c | >{\centering\arraybackslash}m{5cm}}
+\textbf{Price/Slice} & \textbf{Demand (Qty)} & \textbf{Supply (Qty)} & \textbf{Result}\\\hline
+& & & \multirow{5}{4.5cm}{shortage - more is needed than supplied}\\
+\$0.50 & 300 & 100 & \\
+& & & \\
+\$1.00 & 250 & 150 &  \\
+& & & \\\cline{4-4}
+& & & \multirow{5}{4.5cm}{surplus - more is supplied than needed; there is waste}\\
+\$2.00 & 150 & 250 &  \\
+& & & \\
+\$3.00 & 50 & 350 & \\
+& & & 
+\end{tabular}
+\end{figure}
+
+\vspace{.15in}
+
+\noindent We want to find the \emph{equilibrium price and quantity} -- that is, the price and quantity that leaves no shortage and no surplus. We can also think of it as the \emph{point} at which supply and demand meet.
+\vspace{.15in}
+
+\noindent Two equations have been constructed to model this situation. The equation $p = -0.01x + 3.5$ gives us the price ($p$) of a single slice of pizza when the demand is $x$ slices. The equation $p = 0.01x - 0.5$ gives us the price of a single slice when their are $x$ slices supplied.
+
+\vspace{.15in}
+
+\noindent How much do we charge per slice and how many slices do we make in order to have no shortage and no surplus?
+\end{example}
+
+\end{document}

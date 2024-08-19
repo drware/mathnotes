@@ -1,0 +1,212 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0097}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{1.4}
+\newcommand{\topic}{Rules of Algebra}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+
+
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{3}
+
+\subsection{Rules of Algebra}
+\subsubsection*{Vocabulary}
+\begin{itemize}
+\item \textbf{term}: parts of an algebraic expression separated by + or -
+\item \textbf{coefficient}: the numerical part of a term
+\item \textbf{constant term}: a term that has no variable
+\item \textbf{like terms}: terms that have exactly the same variables and exponents
+\end{itemize}
+\vspace{.25in}
+
+\begin{example}
+Consider the following algebraic expression and answer each question.
+\[6x + 2x + 11\]
+\begin{enumerate}
+\item how many terms are there?
+\vspace{.1in}
+\item what is the coefficient of the first term?
+\vspace{.1in}
+\item what is the constant term?
+\vspace{.1in}
+\item what like terms are there, if any?
+\vspace{.1in}
+\end{enumerate}
+\end{example}
+
+\noindent It is also important that you be able to identify \textbf{equivalent algebraic expressions}. When two or more expressions are evaluated for the same values of $x$, we call them \emph{equivalent} if they evaluate to the same value.
+
+\newpage
+
+\subsubsection*{Properties of Real Numbers and Algebraic Expressions}
+
+\begin{itemize}
+\item Commutative
+\begin{itemize}
+\item addition: $a + b = b + a$
+\item multiplication: $ab = ba$
+\end{itemize}
+\item Associative
+\begin{itemize}
+\item addition: $(a + b) + c = a + (b + c)$
+\item multiplication: $(ab)c = a(bc)$
+\end{itemize}
+\item Distributive
+\begin{itemize}
+\item $a(b+c) = ab + ac$
+\end{itemize}
+\end{itemize}
+
+\begin{example}
+Simplify fully: \[8 + (12 + x)\]
+\vspace{.75in}
+\end{example}
+
+\begin{example}
+Simplify fully: \[ 6(5x)\]
+\vspace{.75in}
+\end{example}
+
+\begin{example}
+Write an equivalent expression for \[8 + (x + 4)\]
+\vspace{.75in}
+\end{example}
+
+\newpage
+
+\begin{example}
+Simplify fully: \[5(x+3)\]
+\vspace{.75in}
+\end{example}
+
+\begin{example}
+Simplify fully: \[6(4y+7)\]
+\vspace{.75in}
+\end{example}
+
+\subsubsection*{Combining Like Terms}
+\noindent The distribution property allows us to combine like terms and reduce the number of terms given in an expression.
+
+\noindent How does this work? Consider the following where $ax$ and $bx$ are like terms.
+\[ax + bx = x(a + b) = (a+b)x\]
+
+\begin{example}
+Combine like terms: \[7x + 3x\]
+\vspace{.75in}
+\end{example}
+
+\begin{example}
+Combine like terms: \[9a-4a\]
+\vspace{.75in}
+\end{example}
+
+\subsubsection*{Grouping Multiple Like Terms}
+\noindent The process remains the same when it comes to combining like terms even if we have multiple groups of like terms.
+
+\begin{example}
+Combine like terms: \[8x + 7 + 10x + 3\]
+\vspace{1in}
+\end{example}
+
+\begin{example}
+Combine like terms: \[9x + 6y - 5x + 2y\]
+\vspace{1in}
+\end{example}
+
+\newpage
+
+\subsubsection*{Simplifying Algebraic Expressions}
+
+\noindent An algebraic expression is considered \textbf{simplified} when all parenthesis have been removed and all like terms have been combined.
+
+\vspace{.1in}
+
+\begin{mdframed}
+\textbf{Process}
+\begin{enumerate}
+\item Use the distributive property to remove parentheses.
+\item Rearrange terms and group like terms together.
+\item Combine like terms.
+\end{enumerate}
+\end{mdframed}
+
+\begin{example}
+Simplify fully: \[7(2x+3) + 11x\]
+\vspace{1.55in}
+\end{example}
+
+\begin{example}
+Simplify fully: \[7(4x+3y) + 2(5x+y)\]
+\end{example}
+\end{document}

@@ -1,0 +1,198 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0097}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{1.1}
+\newcommand{\topic}{Intro to Variables and Models}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+
+
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{0}
+
+\subsection{Intro to Variables and Models}
+
+\begin{definition}[Variable]
+a letter or character representing a variety of numbers or quantities
+\end{definition}
+
+\begin{definition}[Algebraic Expression]
+a statement that relates variables and numbers (constants) through a combination of algebraic operations
+\end{definition}
+
+\vspace{.5in}
+\noindent What are operations? Which are the most common?
+
+\vspace{.75in}
+
+\begin{example}
+Rewrite each example as an algebraic expression.
+\begin{enumerate}
+\item two more than a number
+\vspace{.5in}
+\item three less than a value
+\vspace{.5in}
+\item a number divided by six
+\vspace{.5in}
+\item four times a number
+\vspace{.5in}
+\item five more than three times a value
+\end{enumerate}
+\vspace{.5in}
+\end{example}
+
+\newpage
+
+\subsubsection*{Evaluating Algebraic Expressions}
+\begin{itemize}
+\item replace the variable with the given value
+\item simplify the expression using PEMDAS
+\end{itemize}
+
+\vspace{.5in}
+
+\begin{example}
+Evaluate each of the following:
+\begin{enumerate}
+\item $2 + 3x$; $x = 4$
+\vspace{1in}
+\item $5(x-2)$; $x = -3$
+\vspace{1in}
+\item $2x-7y$; $x = 3, y = 2$
+\vspace{1in}
+\item $\dfrac{x+7y-4}{3x-y}$; $x = 1, y = 5$
+\end{enumerate}
+\end{example}
+
+\newpage
+
+\subsubsection*{Equations}
+\begin{definition}[Equations]
+An equation is a statement that two algebraic expressions are the same (equivalent). They always contain an equal $(=)$ sign.
+\end{definition}
+
+\begin{definition}[Solution(s) of an Equation]
+Solutions are values of a variable(s) that make an equation true meaning that when the expressions are evaluated, both sides of the equals sign are the same. We find the solutions by solving for a specific variable.
+\end{definition}
+\vspace{.5in}
+\begin{example}
+Determine whether or not the given value is a solution to each.
+\begin{enumerate}
+\item $9x - 3 = 42$; $x = 6$
+\vspace{1in}
+\item $9x - 3 = 42$; $x = 5$
+\vspace{1in}
+\item $2(y+3) = 5y-3$; $y = 4$
+\vspace{1in}
+\item $2(y+3) = 5y-3$; $ y = 3$
+\end{enumerate}
+\end{example}
+\newpage
+\begin{example}
+Write each sentence as an equation.
+\begin{enumerate}
+\item The quotient of a number and six is five.
+\vspace{.5in}
+\item Seven decreased by twice a number yields one.
+\vspace{.5in}
+\end{enumerate}
+\end{example}
+
+\subsubsection*{Formulas \& Models}
+\begin{definition}[Formula]
+an equation that expresses the relationship between two or more variables
+\end{definition}
+\vspace{.1in}
+
+\begin{definition}[Mathematical Model]
+a formula that describes real-world situations and processes
+\end{definition}
+\vspace{.25in}
+
+\begin{example}
+The number of times my dogs bark in a day, $B$, is determined by the number of people who walk by my house, $w$.
+
+\vspace{.1in}
+\begin{enumerate}
+\item Find the equation representing this situation.
+\vspace{1in}
+\item How many times do they bark if two people walk by?
+\vspace{1in}
+\item How many times do they bark if ten people walk by?
+\vspace{1in}
+\item How many times do they bark if no one walks by?
+\vspace{1in}
+\item How many times do they bark if -5 people walk by?
+\end{enumerate}
+\end{example}
+\end{document}

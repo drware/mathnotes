@@ -1,0 +1,351 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0097}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{1.2}
+\newcommand{\topic}{Fractions}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+
+
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{1}
+
+\subsection{Fractions}
+
+\begin{definition}[mixed number]
+consists of both a whole  number and a proper fraction such as $7\frac{2}{3}$
+\end{definition}
+
+\begin{definition}[improper fraction]
+a fraction whose numerator (top) is greater than the denominator (bottom)
+\end{definition}
+
+\vspace{.5in}
+
+\begin{mdframed}
+\textbf{Converting from Mixed Number to Improper Fraction}
+\begin{itemize}
+\item multiply whole number by denominator
+\item add the numerator to the results of the last step
+\item rewrite this new number as the new numerator and keep the same denominator
+\end{itemize}
+\end{mdframed}
+
+\vspace{.5in}
+
+\begin{example}
+Convert the mixed number to an improper fraction.
+
+\[4\dfrac{2}{3}\]
+\vspace{1in}
+\end{example}
+\begin{example}
+Convert the mixed number to an improper fraction.
+\[3\dfrac{3}{7}\]
+\vspace{1in}
+\end{example}
+
+\newpage
+
+\begin{mdframed}
+\textbf{Converting from Improper Fraction to Mixed Number}
+\begin{itemize}
+\item divide the numerator by the denominator to get the whole number
+\item the remainder from division becomes the numerator
+\item keep the same denominator
+\end{itemize}
+\end{mdframed}
+
+\vspace{.5in}
+
+\begin{example}
+
+Convert the improper fraction to a mixed number.
+\[ \dfrac{31}{6}\]
+\vspace{1in}
+\end{example}
+
+\begin{example}
+
+Convert the improper fraction to a mixed number.
+\[ \dfrac{43}{8}\]
+\vspace{1in}
+\end{example}
+
+\begin{example}
+
+Convert the improper fraction to a mixed number.
+\[ \dfrac{56}{4}\]
+\vspace{1in}
+\end{example}
+
+
+\newpage
+
+\subsubsection*{Factors and Factorization}
+\begin{definition}[Factor]
+a whole number that divides into another number with no remainder; for example, 2 is a factor of 10 since $ 10 = 2\cdot 5$
+\end{definition}
+\vspace{.1in}
+\begin{definition}[Prime Number]
+a natural number greater than 1 that has only factors of 1 and itself
+\end{definition}
+\vspace{.1in}
+\begin{definition}[Composite Number]
+any whole number greater than 1 that has factors other than 1 and itself
+\end{definition}
+\vspace{.25in}
+
+\noindent How do we find the factors of a number? For small numbers we can break them down easily into prime factors. For larger numbers though, we often use a \emph{factor tree} to find each prime factor.
+
+\vspace{.25in}
+
+\begin{example}
+Find the prime factors of 36.
+\vspace{3in}
+\end{example}
+\newpage
+
+\begin{example}
+Find the prime factors of 105.
+\vspace{3in}
+\end{example}
+
+\begin{example}
+What number has the prime factorization $2\cdot 2\cdot 5\cdot 7$?
+\vspace{.75in}
+\end{example}
+
+\begin{example}
+What number has the prime factorization $5\cdot 7\cdot 13$?
+\end{example}
+
+\newpage
+
+\subsubsection*{Reducing Fractions}
+A fraction is considered reduced when the numerator and denominator share no common factors. To reduce a fraction, we start by finding the prime factorization of each the numerator and denominator and then make use of the fact that any number divided by itself is 1.
+
+\vspace{.5in}
+
+\begin{example}
+Reduce the following fraction: \[\dfrac{6}{9}\]
+\end{example}
+\vspace{1in}
+
+\begin{example}
+Reduce the following fraction: \[\dfrac{10}{15}\]
+\end{example}
+\vspace{1in}
+
+\begin{example}
+Reduce the following fraction: \[\dfrac{42}{24}\]
+\end{example}
+\vspace{1in}
+
+\newpage
+
+\subsubsection*{Multiplying Fractions}
+Multiply fractions by reducing each, then multiplying the numerators together, then the denominators.
+
+\begin{example}
+Find the following product in reduced form: \[\dfrac{3}{7}\cdot\dfrac{2}{3}\]
+\vspace{.75in}
+\end{example}
+\begin{example}
+Find the following product in reduced form: \[\dfrac{8}{6}\cdot\dfrac{12}{16}\]
+\vspace{.75in}
+\end{example}
+\begin{example}
+Find the following product in reduced form: \[\dfrac{7}{4}\cdot\dfrac{14}{21}\]
+\vspace{.75in}
+\end{example}
+\begin{example}
+Find the following product in reduced form: \[5 \cdot\dfrac{3}{4}\]
+\vspace{.75in}
+\end{example}
+
+\subsubsection*{Dividing Fractions}
+Dividing fractions is not as straightforward as multiplying them. To divide fractions, remember "keep, change, flip". You \emph{keep} the first fraction the same, \emph{change} the operation to multiplication, and \emph{flip} the second fraction. Then solve it as a multiplication problem.
+\vspace{.1in}
+The proper name for the flipped fraction is the \emph{reciprocal}.
+\vspace{.1in}
+\begin{definition}[Reciprocal]
+the inverted version of a fraction that when multiplied by the original fraction makes 1
+\end{definition}
+\vspace{.25in}
+
+\begin{example}
+Find the following quotient in reduced form: \[\dfrac{5}{4}\divisionsymbol\dfrac{3}{8}\]
+\vspace{.75in}
+\end{example}
+\begin{example}
+Find the following quotient in reduced form: \[\dfrac{2}{3}\divisionsymbol 3\]
+\vspace{.75in}
+\end{example}
+\begin{example}
+Find the following quotient in reduced form: \[\dfrac{27}{8}\divisionsymbol\dfrac{9}{4}\]
+\vspace{.75in}
+\end{example}
+\begin{example}
+Find the following quotient in reduced form: \[4 \divisionsymbol\dfrac{3}{2}\]
+\vspace{.75in}
+\end{example}
+
+\subsubsection*{Adding/Subtracting with Like Denominators}
+Adding and subtracting \emph{with like denominators} is straightforward. Combine the numerators with either addition or subtraction and rewrite over the original denominator. Reduce if necessary.
+
+\begin{example}
+Find the following sum in reduced form: \[\dfrac{2}{11}+\dfrac{3}{11}\]
+\vspace{.75in}
+\end{example}
+\begin{example}
+Find the following difference in reduced form: \[\dfrac{5}{6}- \dfrac{1}{6}\]
+\vspace{.75in}
+\end{example}
+\begin{example}
+Find the following difference in reduced form: \[\dfrac{27}{8}-\dfrac{9}{8}\]
+\vspace{.75in}
+\end{example}
+\begin{example}
+Find the following sum in reduced form: \[\dfrac{2}{5} +\dfrac{4}{5}\]
+\vspace{.75in}
+\end{example}
+
+\subsubsection*{Adding/Subtracting with Unlike Denominators}
+Before we can add/subtract with unlike denominators, we need to find a common denominator. The easiest way to do this is by multiplying the denominators together. We then need to change each fraction so that they each have the same denominator. Then treat it as we treated the previous examples.
+
+\begin{example}
+Find the following sum in reduced form: \[\dfrac{1}{2}+\dfrac{3}{5}\]
+\vspace{.75in}
+\end{example}
+\begin{example}
+Find the following difference in reduced form: \[\dfrac{4}{3}- \dfrac{3}{4}\]
+\vspace{.75in}
+\end{example}
+\begin{example}
+Find the following difference in reduced form: \[\dfrac{19}{6}-\dfrac{23}{12}\]
+\vspace{.75in}
+\end{example}
+\begin{example}
+Find the following sum in reduced form: \[\dfrac{2}{8} +\dfrac{3}{2}\]
+\vspace{.75in}
+\end{example}
+
+\subsubsection*{Finding the LCD with Prime Factorization}
+\noindent When we need a common denominator, a quick and easy way to find it is to multiply the two denominators together. This doesn't always yield a nice number to work with. For example, if you were asked to add $\sfrac{1}{15}+\sfrac{1}{25}$, you would find a common denominator as $15\cdot 25 = 375$. However, there is another lower common denominator that we can find another way. Namely, $3\cdot 5\cdot 5 = 75$. How do we find this though?
+
+\vspace{.25in}
+
+\noindent Finding the LCD (\emph{least common denominator}) involves finding the prime factorization of each number and then looking for necessary overlap.
+
+\vspace{.25in}
+
+\begin{example}
+Find the LCD if the denominators are 15 and 24.
+\vspace{1in}
+\end{example}
+
+\begin{example}
+Find the LCD if the denominators are 10 and 12.
+\vspace{1in}
+\end{example}
+
+\begin{example}
+Find the LCD if the denominators are 14 and 21.
+\vspace{1in}
+\end{example}
+
+\begin{example}
+Find $\dfrac{3}{10}+\dfrac{7}{12}$ using the LCD.
+\vspace{1in}
+\end{example}
+
+\newpage
+
+\begin{example}
+Find $\dfrac{13}{14}-\dfrac{3}{21}$ using the LCD.
+\vspace{1.5in}
+\end{example}
+
+\subsubsection*{Fractions in Algebra}
+
+\begin{example}
+Is $x = \dfrac{9}{7}$ a solution to the equation below? \[x - \dfrac{2}{9}x = 1\]
+\vspace{1.5in}
+\end{example}
+
+\begin{example}
+Is $w = \dfrac{3}{20}$ a solution to the equation below? \[\dfrac{1}{5}-w = \dfrac{1}{3}w\]
+\vspace{1.5in}
+\end{example}
+\end{document}

@@ -1,0 +1,194 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+% adds in \varnothing for empty set
+\usepackage{amssymb}
+% adds in formated SI units
+%\usepackage{siunitx}
+\usepackage{pgfplots}
+\usepackage{multirow}
+\usepackage{array}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0097}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{4.4}
+\newcommand{\topic}{Problem Solving with Systems}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+%\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+%\newmdtheoremenv{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Create bars around subsubsection
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+   
+%%%%%%%%%%%%%%%%%%%%%%%
+% Create line break after definition label
+%%%%%%%%%%%%%%%%%%%%%%%   
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {}{}%\itshape
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newmdtheoremenv{definition}{Definition}[subsection]
+\theoremstyle{break}
+\newtheorem{example}{Example}[subsection]
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start document
+% set section, subsection (use n-1 for sub)
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\setcounter{section}{4}
+\setcounter{subsection}{3}
+
+\subsection{Problem Solving with Systems}
+
+\vspace{.15in}
+
+\begin{mdframed}
+\textbf{Process - Problem Solving (Word Problems)}
+\begin{enumerate}
+\item Identify and state your variables/unknowns.
+\item Create each of the two equations.
+\item Solve the system using any method that we've covered.
+\item Give your solution as a statement.
+\end{enumerate}
+\end{mdframed}
+
+\vspace{.15in}
+
+\begin{example}
+Each weekend, the total average time that men and women spend socializing (pre-2020) is 138 minutes. The difference in the time between men and women is 8 minutes. How much time do women spend socializing on average? What about men?
+\end{example}
+
+\newpage
+
+\begin{example}
+Two Quarter-Pounders and three Whoppers total 2,607 calories. Combining one of each yields 1,009 calories. How many calories are there in one Quarter Pounder? In one Whopper?
+\end{example}
+
+\newpage
+
+\begin{example}
+A rectangular lot has a perimeter of 360 feet. An expensive fence is used to fence in the length while the two sides use a cheaper fence. This lot is backed up against a building, so there is only one length to be fenced. The total cost is \$3,280 with the expensive fence having a price of \$20 per linear foot and the cheap fence at \$8 per linear foot.
+
+\vspace{.15in}
+
+\noindent What are the dimensions of the lot? What is the area of the lot?
+\end{example}
+
+\newpage
+
+\begin{example}
+A family is having a new home built and has to decide between using gas or electric heating. Their contractor gives them the following table breaking down the costs of each. How many years will it take for the two systems to cost the same? Which system is cheaper until then?
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{c | c | c}
+\textbf{System} & \textbf{Installation Cost} & \textbf{Operating Cost/year} \\\hline
+\emph{Electric} & \$5,000 & \$1,100\\\hline
+\emph{Gas} & \$12,000 & \$700\\\hline
+\end{tabular}
+\end{figure}
+
+\end{example}
+
+\newpage
+
+\subsubsection*{Simple Interest}
+
+The formula $I = Pr$ gives the \emph{simple interest} for a one year period of time. The variable $I$ is the interest earned, $P$ is the principal, or initial, investment, and $r$ is the interest rate as a decimal.
+
+\vspace{.15in}
+
+\begin{example}
+How much is in my account if I invest \$1,200 at 5\% for one year?
+\vspace{2.5in}
+\end{example}
+
+\begin{example}
+How much money did I invest at 3.5\% if I made \$70 interest in one year?
+\end{example}
+
+\newpage
+
+\begin{example}
+You have \$5,000 that you invest into two accounts to minimize risk. One account earns 9\% interest while the other earns 11\% interest. How much should you invest in each account if you want to earn \$487 interest after one year?
+\end{example}
+
+\newpage
+
+\begin{example}
+A vintner wants to mix a 12\% ABV wine with a 20\% ABV wine to obtain 160 gallons of a 15\% ABV wine. How many gallons of each wine does the vintner need?
+\end{example}
+
+
+\end{document}

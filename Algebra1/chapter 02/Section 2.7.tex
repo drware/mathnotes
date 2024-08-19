@@ -1,0 +1,199 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+% adds in \varnothing for empty set
+\usepackage{amssymb}
+% adds in formated SI units
+%\usepackage{siunitx}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0097}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{2.7}
+\newcommand{\topic}{Solving Linear Inequalities}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+%\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+%\newmdtheoremenv{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Create bars around subsubsection
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+   
+%%%%%%%%%%%%%%%%%%%%%%%
+% Create line break after definition label
+%%%%%%%%%%%%%%%%%%%%%%%   
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {}{}%\itshape
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newmdtheoremenv{definition}{Definition}[subsection]
+\theoremstyle{break}
+\newtheorem{example}{Example}[subsection]
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start document
+% set section, subsection (use n-1 for sub)
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{6}
+
+\subsection{Solving Linear Inequalities}
+
+\vspace{.25in}
+
+\noindent A \emph{linear inequality} in \emph{one} variable is written in the form $ax + b \le c$ where the $\le$ can be replaced with any inequality symbol -- $<,\; >,\; \le,\; \ge$. Solving a linear inequality gives a \textbf{solution set} as opposed to a single solution. The solution set can be expressed as an interval or inequality and can be graphed on a number line.
+
+\vspace{.15in}
+
+\begin{figure}[h]
+\begin{tabular}{c | c | c | c}
+\textbf{Inequality} & \textbf{Interval} & \textbf{Set-Builder} & \textbf{Graph} \\\hline
+& $\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$&$\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$ &$\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$\\
+$x > a$ & & & \\
+& & &\\\hline
+& & &\\
+$x \ge a$ & & & \\
+& & &\\\hline
+& & &\\
+$x < a$ & & & \\
+& & &\\\hline
+& & &\\
+$x \le a$ & & & \\
+& & &\\\hline
+
+\end{tabular}
+\end{figure}
+
+\vspace{.15in}
+
+\begin{example}
+Solve and graph the following inequality:
+\[x + 6 < 9\]
+\end{example}
+
+\newpage
+
+\begin{example}
+Solve and graph the following inequality:
+\[8x - 2 \ge 7x - 4\]
+\vspace{1.5in}
+\end{example}
+
+\noindent \emph{Note:} When working with inequalities, if you \emph{multiply or divide} by a negative number, you must \emph{flip the direction of the inequality}.
+\vspace{.15in}
+
+\begin{example}
+Solve and graph the inequality:
+\[-6x < 18\]
+\vspace{1.5in}
+\end{example}
+
+\begin{example}
+Solve and graph:
+\[5y - 3 \ge 17\]
+\end{example}
+
+\newpage
+
+\begin{example}
+Solve and graph:
+\[6 - 3x \le 5x - 2\]
+\vspace{2in}
+\end{example}
+
+\begin{example}
+Solve and graph:
+\[2(x-3) -1 \le 3(x+2) - 14\]
+\vspace{2in}
+\end{example}
+
+\begin{example}
+Solve and graph:
+\[4(x+2) > 4x + 15\]
+\vspace{2in}
+\end{example}
+
+\newpage
+
+\begin{example}
+Solve and graph:
+\[2(x+5) \le 5x - 3x + 14\]
+\vspace{2in}
+\end{example}
+
+\begin{example}
+You must have an average score of 80\% to earn a B. On your first three tests, you have scores of 82\%, 74\% and 78\%. If the final counts as two grades, what must you get on the final to earn a B in the class?
+\\
+
+\noindent Remember that the average of a set of values is found by adding all the values and dividing by the total number of values.
+\end{example}
+\end{document}

@@ -1,0 +1,157 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+% adds in \varnothing for empty set
+\usepackage{amssymb}
+% adds in formated SI units
+%\usepackage{siunitx}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0097}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{3.4}
+\newcommand{\topic}{The Slope-Intercept Form}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+%\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+%\newmdtheoremenv{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Create bars around subsubsection
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+   
+%%%%%%%%%%%%%%%%%%%%%%%
+% Create line break after definition label
+%%%%%%%%%%%%%%%%%%%%%%%   
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {}{}%\itshape
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newmdtheoremenv{definition}{Definition}[subsection]
+\theoremstyle{break}
+\newtheorem{example}{Example}[subsection]
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start document
+% set section, subsection (use n-1 for sub)
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{3}
+
+\subsection{The Slope-Intercept Form}
+
+\vspace{.15in}
+
+Consider the equation $y = mx + b$. We know that both $x$ and $y$ represent variables or unknowns, but we haven't yet discussed $m$ and $b$ in detail. From the previous section, we know that $m$ represents the slope of the equation -- how quickly $y$ changes as $x$ changes. The last value, $b$, represents the $y$-intercept -- a topic from a few sections back -- where the line crosses the $y$-axis.
+
+\vspace{.15in}
+
+\begin{example}
+Identify the slope and give the $y$-intercept as a point for each equation below.
+\begin{enumerate}
+\item $y = 5x-3$
+\vspace{.5in}
+\item $y = \dfrac{2}{3}x + 4$
+\vspace{.5in}
+\item $7x + y = 6$
+\vspace{1in}
+\end{enumerate}
+\end{example}
+
+\subsubsection*{Graphing with $y=mx+b$}
+\begin{enumerate}
+\item Identify and plot the $y$-intercept.
+\item Use the slope to find and plot a second point.
+\begin{enumerate}
+\item Rewrite the slope as a fraction.
+\item Move up/down by the numerator (rise).
+\item Move left/right by the denominator (run).
+\end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\begin{example}
+Graph $y = 3x - 2$ using the slope and $y$-intercept.
+\vspace{3in}
+\end{example}
+
+\begin{example}
+Graph $y = \dfrac{3}{5}x + 1$ using the slope and $y$-intercept.
+\end{example}
+
+\newpage
+
+\begin{example}
+Graph $3x+4y = 0$ using the slope and $y$-intercept. (\emph{Hint: Solve for $y$.})
+\end{example}
+
+\end{document}

@@ -1,0 +1,263 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+% adds in \varnothing for empty set
+\usepackage{amssymb}
+% adds in formated SI units
+%\usepackage{siunitx}
+\usepackage{pgfplots}
+\usepackage{multirow}
+\usepackage{array}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0097}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{5.7}
+\newcommand{\topic}{Negative Exponents \& Scientific Notation}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+%\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+%\newmdtheoremenv{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Create bars around subsubsection
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+   
+%%%%%%%%%%%%%%%%%%%%%%%
+% Create line break after definition label
+%%%%%%%%%%%%%%%%%%%%%%%   
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {}{}%\itshape
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newmdtheoremenv{definition}{Definition}[subsection]
+\theoremstyle{break}
+\newtheorem{example}{Example}[subsection]
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start document
+% set section, subsection (use n-1 for sub)
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\setcounter{section}{5}
+\setcounter{subsection}{6}
+
+\subsection{Negative Exponents \& Scientific Notation}
+
+\vspace{.15in}
+Suppose that we have $\dfrac{b^3}{b^5}$. By our definitions so far, we can determine the following:
+\[\dfrac{b^3}{b^5} = \dfrac{b\cdot b\cdot b}{b\cdot b\cdot b\cdot b\cdot b} = \dfrac{1}{b\cdot b} = \dfrac{1}{b^2}\]
+
+However, by the quotient rule, we have $\dfrac{b^3}{b^5} = b^{3-5} = b^{-2}$. Since we assume that both methods are correct, we can safely say that $\dfrac{1}{b^2} = b^{-2}$ by the \emph{transitive property}.
+\vspace{.15in}
+
+\begin{definition}[Negative Exponent Rule]\mbox{}\\
+\begin{itemize}
+\item $b^{-n} = \dfrac{1}{b^n}$ for $b\neq 0$
+\item $\dfrac{1}{b^{-n}} = b^n$ for $b \neq 0$
+\end{itemize}
+\end{definition}
+\vspace{.15in}
+
+\begin{example}
+Rewrite each of the following with positive exponents.
+\begin{enumerate}
+\begin{minipage}{.5\textwidth}
+\item $6^{-2}$
+\vspace{.4in}
+\item $(-3)^{-4}$
+\vspace{.4in}
+\item $-3^{-4}$
+\vspace{.4in}
+\item $7^{-1}$
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\item $\dfrac{2^{-3}}{7^{-2}}$
+\vspace{.15in}
+\item $\left(\dfrac{4}{5}\right)^{-2}$
+\vspace{.15in}
+\item $\dfrac{1}{7y^{-2}}$
+\vspace{.15in}
+\item $\dfrac{x^{-1}}{y^{-8}}$
+\end{minipage}%
+\end{enumerate}
+\end{example}
+
+\newpage
+
+\subsubsection*{Simplifying Exponential Expressions}
+\begin{example}
+Simplify each of the following:
+\begin{enumerate}
+\item $x^{-12}\cdot x^2 = $
+\vspace{.25in}
+\item $\dfrac{x^2}{x^{10}} = $
+\vspace{.25in}
+\item $\dfrac{75x^3}{5x^9} = $
+\vspace{.25in}
+\item $\dfrac{50y^8}{-25y^{-14}} = $
+\vspace{.25in}
+\item $\dfrac{(5x^3)^2}{x^{10}} = $
+\vspace{.35in}
+\item $\left(\dfrac{x^8}{x^4}\right)^{-5} = $
+\end{enumerate}
+\end{example}
+
+\newpage
+
+\subsubsection*{Scientific Notation}
+Scientific notation is used as a shorthand method of writing \emph{very} large numbers. For those of you who have taken Chemistry, you may remember Avogadro's number: $6.02214076\times 10^{23}$. If, for some unknown reason, we wanted to write this without using scientific notation, we would have:
+\[602,214,076,000,000,000,000,000\]
+
+\vspace{.15in}
+
+\begin{definition}[Scientific Notation]
+A number written in scientific notation has the form $a \times 10^n$ where $1 \le \abs{a} < 10$ and $n$ is some integer.
+\end{definition}
+\vspace{.15in}
+
+\begin{mdframed}
+\textbf{Procedure: Convert from Scientific Notation}
+\begin{itemize}
+\item If $n > 0$, move the decimal to the \emph{right} by $n$ places, adding in 0s as necessary. This should give you a \emph{large} number.
+\item If $n < 0$, move the decimal the the \emph{left} by $n$ places, adding in 0s as necessary. This should give you a \emph{small} number.
+\end{itemize}
+\end{mdframed}
+\vspace{.15in}
+
+\begin{example}
+Convert $7.4 \times 10^9$ to standard decimal notation.
+\vspace{.75in}
+\end{example}
+
+\begin{example}
+Convert $3.017\times 10^{-6}$ to standard decimal notation.
+\vspace{.5in}
+\end{example}
+
+\newpage
+\begin{mdframed}
+\textbf{Procedure: Convert to Scientific Notation}
+\begin{itemize}
+\item Determine $a$ -- move the decimal around until $1 \le \abs{a} < 10$.
+\item Determine $n$ -- $n$ is the number of places that the decimal point was moved. $n > 0$ if the original number is larger than 10 (or smaller than -10) and $n < 0$ if the original is between $-1$ and $1$.
+\end{itemize}
+\end{mdframed}
+\vspace{.15in}
+
+\begin{example}
+Convert $7,410,000,000$ to scientific notation.
+\vspace{.75in}
+\end{example}
+
+\begin{example}
+Convert $-4,120,000$ to scientific notation.
+\vspace{.75in}
+\end{example}
+
+\begin{example}
+Convert $0.000023$ to scientific notation.
+\vspace{1in}
+\end{example}
+
+\subsubsection*{Operations on Scientific Notations}
+\begin{itemize}
+\item Multiplication: $(a\times 10^m)(b \times 10^n) = ab \times 10^{m+n}$
+\vspace{.15in}
+\item Division: $\dfrac{a \times 10^m}{b \times 10^n} = \left(\dfrac{a}{b}\right) \times 10^{m-n}$
+\vspace{.15in}
+\item Exponentiation: $(a\times 10^m)^n = a^n \times 10^{mn}$
+\end{itemize}
+
+\newpage
+
+\begin{example}
+Simplify and write in scientific notation: 
+\[(3\times 10^8)(2\times 10^2)\]
+\vspace{.75in}
+\end{example}
+
+\begin{example}
+Simplify and write in scientific notation: 
+\[\dfrac{8.4\times 10^7}{4\times 10^{-4}}\]
+\vspace{.75in}
+\end{example}
+
+\begin{example}
+Simplify and write in scientific notation: 
+\[(4\times 10^{-2})^3\]
+\vspace{.75in}
+\end{example}
+
+\begin{example}
+Simplify and write in scientific notation: 
+\[\dfrac{(4\times 10^5)(9\times 10^{-4})}{2\times 10^{-3}}\]
+\end{example}
+\end{document}

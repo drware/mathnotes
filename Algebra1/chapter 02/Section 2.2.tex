@@ -1,0 +1,177 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0097}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{2.2}
+\newcommand{\topic}{The Multiplication Property of Equality}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+%\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+%\newmdtheoremenv{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Create bars around subsubsection
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+   
+%%%%%%%%%%%%%%%%%%%%%%%
+% Create line break after definition label
+%%%%%%%%%%%%%%%%%%%%%%%   
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {}{}%\itshape
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newmdtheoremenv{definition}{Definition}[subsection]
+\theoremstyle{break}
+\newtheorem{example}{Example}[subsection]
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start document
+% set section, subsection (use n-1 for sub)
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{1}
+
+\subsection{The Multiplication Property of Equality}
+
+\vspace{.25in}
+
+\begin{definition}[Multiplication Property of Equality]
+If $a=b$ and $c\neq 0$, then $ac=bc$.
+\end{definition}
+
+\vspace{.15in}
+
+\begin{example}
+Solve for $x$: \[\dfrac{x}{3} = 12\]
+\vspace{1in}
+\end{example}
+
+\noindent Since division is defined using multiplication, this property works with division as well.
+
+\vspace{.15in}
+
+\begin{example}
+Solve for $x$: \[4x = 84\]
+\vspace{1in}
+\end{example}
+
+\begin{example}
+Solve for $y$: \[ -11y = 44\]
+\end{example}
+
+\newpage
+
+\noindent If we have a fraction in the problem, we can approach it one of two ways. We can either start by dividing by the numerator, then multiplying by the denominator to isolate the variable, or we can simply multiply by the \emph{reciprocal} of the fraction.
+
+\vspace{.15in}
+
+\begin{example}
+Solve for $y$: \[\dfrac{2}{3}y = 16\]
+\vspace{1.25in}
+\end{example}
+
+\begin{example}
+Solve for $x$: \[28 = -\dfrac{7}{4}x\]
+\vspace{1.25in}
+\end{example}
+
+\begin{example}
+Solve for $x$: \[-x = 5\]
+
+\end{example}
+
+\newpage
+
+\noindent If there are multiple operations in an equation, we typically approach by first getting rid of any addition or subtraction, then moving on to multiplication and division. In general, you can think of it as doing \textbf{PEMDAS} in reverse.
+
+\vspace{.15in}
+
+\begin{example}
+Solve for $x$ and check: \[4x + 3 = 27\]
+\vspace{1.5in}
+\end{example}
+
+\begin{example}
+Solve for $y$ and check: \[-4y - 15 = 25\]
+\vspace{1.5in}
+\end{example}
+
+\begin{example}
+Solve for $x$ and check: \[2x - 15 = -4x + 21\]
+\end{example}
+
+
+
+
+\end{document}

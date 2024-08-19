@@ -1,0 +1,170 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0097}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{1.7}
+\newcommand{\topic}{Multiplication \& Division of Real Numbers}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+
+
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{6}
+
+\subsection{Multiplication \& Division of Real Numbers}
+
+\vspace{.25in}
+
+\begin{mdframed}
+\textbf{Sign Rules for Multiplication}
+\begin{itemize}
+\item positive $\times$ positive $=$ positive
+\item negative $\times$ negative $=$ positive
+\item positive $\times$ negative $=$ negative
+\item negative $\times$ positive $=$ negative
+\item $a \cdot 0 = 0$
+\item $0 \cdot a = 0$
+\end{itemize}
+\noindent \emph{Same signs - positive; different signs - negative}
+\end{mdframed}
+\vspace{.15in}
+
+\begin{mdframed}
+\textbf{Sign Rules for Division}
+\begin{itemize}
+\item positive $\divisionsymbol$ positive $=$ positive
+\item negative $\divisionsymbol$ negative $=$ positive
+\item positive $\divisionsymbol$ negative $=$ negative
+\item negative $\divisionsymbol$ positive $=$ negative
+\item $0 \divisionsymbol a = 0$
+\item $a \divisionsymbol 0 = $ undefined
+\end{itemize}
+\noindent \emph{Same signs - positive; different signs - negative}
+\end{mdframed}
+
+\vspace{.15in}
+\noindent What if there are more than two numbers involved? \emph{If there are an even number of negatives, then the result is positive. An odd number of negatives gives a negative result.}
+
+\newpage
+
+\begin{example}
+Find $(-2)(3)(-1)(4) = $
+\vspace{.5in}
+\end{example}
+
+\begin{example}
+Find $(-37)(423)(0)(-55)(-3.7) = $
+\vspace{.5in}
+\end{example}
+
+\begin{mdframed}
+\textbf{Other Properties of Multiplication}
+\begin{itemize}
+\item Identity: $a\cdot 1 = 1\cdot a = a$
+\item Inverse: $a \cdot \dfrac{1}{a} = \dfrac{1}{a}\cdot a = 1$
+\end{itemize}
+\end{mdframed}
+\vspace{.15in}
+\noindent Division is defined using multiplication. How so?\\
+
+\noindent Let $a$ and $b$ be real numbers with $b \neq 0$, then: \[a\divisionsymbol b = \dfrac{a}{b} = a \cdot \dfrac{1}{b}\]
+\\
+\subsubsection*{Negatives with Parentheses}
+
+\noindent When there is a negative sign in front of a quantity (set of parentheses), distribute a negative one to each term.
+
+\begin{example}
+Simplify fully: \[4(3y-7) - (13y-2)\]
+\end{example}
+
+\newpage
+
+\begin{example}
+Simplify fully: \[-4(-\dfrac{3}{4}y)\]
+\vspace{1in}
+\end{example}
+
+\begin{example}
+Simplify fully: \[4(2y-3)-(7y+2)\]
+\vspace{1in}
+\end{example}
+
+\begin{example}
+Is $x = -8$ a solution to the following equation? \[4(6-x) + 7x = 0\]
+\vspace{1in}
+\end{example}
+
+\begin{example}
+Is $m = -4$ a solution to the following equation? \[\dfrac{5m-1}{6} = \dfrac{3m-2}{4}\]
+\end{example}
+
+\end{document}

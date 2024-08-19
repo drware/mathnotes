@@ -1,0 +1,162 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+% adds in \varnothing for empty set
+\usepackage{amssymb}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0097}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{2.3}
+\newcommand{\topic}{Solving Linear Equations}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+%\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+%\newmdtheoremenv{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Create bars around subsubsection
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+   
+%%%%%%%%%%%%%%%%%%%%%%%
+% Create line break after definition label
+%%%%%%%%%%%%%%%%%%%%%%%   
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {}{}%\itshape
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newmdtheoremenv{definition}{Definition}[subsection]
+\theoremstyle{break}
+\newtheorem{example}{Example}[subsection]
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start document
+% set section, subsection (use n-1 for sub)
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{2}
+
+\subsection{Solving Linear Equations}
+
+\vspace{.25in}
+
+\begin{mdframed}
+\textbf{Method - Solving Linear Equations}
+\begin{enumerate}
+\item simplify the algebraic expressions on both sides
+\item collect all variable terms on one side, constants to the other
+\item isolate the variable
+\item check your solution
+\end{enumerate}
+\end{mdframed}
+
+\vspace{.15in}
+
+\begin{example}
+Solve for $x$ and check: \[-7x + 25 + 3x = 16 - 2x - 3\]
+\vspace{2in}
+\end{example}
+
+\begin{example}
+Solve for $x$ and check: \[8x = 2(x+6)\]
+\end{example}
+
+\newpage
+
+\begin{example}
+Solve for $x$ and check: \[4(2x + 1) - 29 = 3(2x - 5)\]
+\vspace{2.5in}
+\end{example}
+
+\begin{example}
+Solve for $x$ and check: \[\dfrac{x}{4} = \dfrac{2x}{3} + \dfrac{5}{6}\]
+\end{example}
+
+\newpage
+
+\subsubsection*{Equations with No or Infinite Solutions}
+\noindent Consider the equation $x = x + 4$. If we solve it by subtracting $x$ from both sides, we determine that $0 = 4$ which we know is not true - i.e., a \emph{false statement}. This tells us that there are \textbf{no} values of $x$ that satisfy the original equation. We write this as either $\varnothing$ or $\{\}$.
+
+\vspace{.15in}
+
+\noindent Now consider a similar statement, $x + 3 = 5 + x - 2$. Solving this yields the statement that $3=3$, which we should recognize as being true - i.e., a \emph{true statement}. This is called an \emph{identity} and tells us that \emph{any} value of $x$ is a solution to the original equation. This is typically notated as one of the following ways: "all real numbers", $\mathbb{R}$, $\{x \mid x \text{ is a real number}\}$, or $\{x \mid x \in\mathbb{R}\}$.
+
+\vspace{.15in}
+
+\begin{example}
+Solve for $x$ and verify: \[3x + 7 = 3(x+1)\]
+\vspace{2in}
+\end{example}
+
+\begin{example}
+Solve for $x$ and verify: \[3(x-1) + 9 = 8x + 6 - 5x\]
+\end{example}
+\end{document}

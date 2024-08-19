@@ -1,0 +1,188 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+% adds in \varnothing for empty set
+\usepackage{amssymb}
+% adds in formated SI units
+%\usepackage{siunitx}
+\usepackage{pgfplots}
+\usepackage{multirow}
+\usepackage{array}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0097}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{5.4}
+\newcommand{\topic}{Polynomials in Several Variables}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+%\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+%\newmdtheoremenv{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Create bars around subsubsection
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+   
+%%%%%%%%%%%%%%%%%%%%%%%
+% Create line break after definition label
+%%%%%%%%%%%%%%%%%%%%%%%   
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {}{}%\itshape
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newmdtheoremenv{definition}{Definition}[subsection]
+\theoremstyle{break}
+\newtheorem{example}{Example}[subsection]
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start document
+% set section, subsection (use n-1 for sub)
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\setcounter{section}{5}
+\setcounter{subsection}{3}
+
+\subsection{Polynomials in Several Variables}
+
+\vspace{.15in}
+
+\begin{example}
+Evaluate the following for $x = -1$ and $y = 5$.
+\[3x^3y + xy^2 + 5y + 6\]
+\vspace{.75in}
+\end{example}
+
+\begin{definition}[Degree]
+The degree of a monomial in several variables is the sum of the exponents. The degree of a polynomial in several variables is the largest degree of each term.
+\end{definition}
+
+\vspace{.15in}
+
+\begin{example}
+Find the degree of each term and then find the degree of the polynomial.
+\[8x^4y^5 - 7x^3y^2 - x^2y - 6x + 11\]
+\vspace{1in}
+\end{example}
+
+\begin{definition}[Like Terms]
+Two monomials are like terms if the exponent of each variable in one term matches the corresponding exponent in the other term.
+\end{definition}
+
+\newpage
+
+\begin{example}
+Find the following:
+\[ (-8x^2y - 3xy+6) + (10x^2y + 5xy - 10)\]
+\vspace{1in}
+\end{example}
+
+\begin{example}
+Find the following:
+\[ (7x^3 - 10x^2y + 2xy^2 - 5) - (4x^3 - 12x^2y - 3xy^2 + 5)\]
+\vspace{1in}
+\end{example}
+
+\begin{example}
+Find the following:
+\[ (6xy^3)(10x^4y^2)\]
+\vspace{1in}
+\end{example}
+
+\begin{example}
+Find the following:
+\[ 6xy^2(10x^4y^5-2x^2y+3)\]
+\end{example}
+
+\newpage
+
+\begin{example}
+Find the following:
+\[ (7x-6y)(3x-y)\]
+\vspace{1in}
+\end{example}
+
+\begin{example}
+Find the following:
+\[ (2x+4y)^2\]
+\vspace{1in}
+\end{example}
+
+\begin{example}
+Find the following:
+\[ (6xy^2 + 5x)(6xy^2 - 5x)\]
+\vspace{1in}
+\end{example}
+
+\begin{example}
+Find the following:
+\[ (x-y)(x^2+xy+y^2)\]
+\end{example}
+
+\end{document}

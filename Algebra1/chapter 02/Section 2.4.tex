@@ -1,0 +1,164 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+% adds in \varnothing for empty set
+\usepackage{amssymb}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0097}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{2.4}
+\newcommand{\topic}{Formulas \& Percentages}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+%\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+%\newmdtheoremenv{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Create bars around subsubsection
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+   
+%%%%%%%%%%%%%%%%%%%%%%%
+% Create line break after definition label
+%%%%%%%%%%%%%%%%%%%%%%%   
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {}{}%\itshape
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newmdtheoremenv{definition}{Definition}[subsection]
+\theoremstyle{break}
+\newtheorem{example}{Example}[subsection]
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start document
+% set section, subsection (use n-1 for sub)
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{3}
+
+\subsection{Formulas \& Percentages}
+
+\vspace{.25in}
+
+\noindent One of the best applications of math is in determining a \emph{formula} that represents some real world scenario. These formulas typically relate several unknowns (variables) with each other. Using the properties from the previous sections, we can rearrange a formula and solve it for various unknown quantities.
+
+\vspace{.15in}
+
+\begin{example}
+Consider the equation below that relates the temperature in degrees Fahrenheit ($F$) to the temperature in degrees Celsius ($C$). If we know the temperature in Celsius, we can plug it in to the formula and find the corresponding temperature in Fahrenheit. Instead, say we have the temperature in Fahrenheit and want to convert it to Celsius. How would we do that?
+\[ F = \dfrac{9}{5}C + 32\]
+
+\end{example}
+
+\newpage
+
+\begin{example}
+Another important formula would be the \emph{area of a rectangle}, given below. This allows us to calculate the area ($A$) if we know both the length ($l$) and width ($w$). What if we know the area and the length, but want the width without measuring? What if we know the area and width, but want the length without measuring? Solve the equation for each $l$ and $w$.
+\[A = lw\]
+\vspace{1in}
+\end{example}
+
+\begin{example}
+Along with area of a rectangle, we can determine the \emph{perimeter} of the rectangle. The perimeter (equation given below) represents the \emph{distance around the outside} of the rectangle. For example, if a security guard has to walk the outside wall of a building for her nightly rounds, she may want to determine just how far she is walking by calculating the perimeter of the rectangular building.
+\\
+
+\noindent Perimeter ($P$) is calculated by adding the sides ($l$,$w$) of the shape together. But what if we know one of the sides and the perimeter, could we find the missing side? Solve the equation for both $l$ and $w$.
+\[P = 2l+2w\]
+\end{example}
+
+\newpage
+
+\begin{example}
+The following formula (equation) relates the unknown $x$ and $y$. Solve it once for $x$, then for $y$.
+\[\dfrac{x}{3} - 4y = 5\]
+\vspace{2in}
+\end{example}
+
+\subsubsection*{Percentages}
+\noindent The formula used to calculate percentages of some value is given as
+\[A = PB\]
+which is read as "$A$ is \emph{percent} of $B$". Frequently, the word "of" in math means to multiply. The value $P$ in the above equation is a decimal (or fraction) between 0 and 1.
+
+\vspace{.15in}
+
+\begin{example}
+What number is 9\% of 50?
+\vspace{.75in}
+\end{example}
+
+\begin{example}
+The number 9 is 60\% of what number?
+\vspace{.75in}
+\end{example}
+\begin{example}
+The number 18 is what percent of 50?
+\end{example}
+\end{document}

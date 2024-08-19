@@ -1,0 +1,212 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+% adds in \varnothing for empty set
+\usepackage{amssymb}
+% adds in formated SI units
+%\usepackage{siunitx}
+\usepackage{pgfplots}
+\usepackage{multirow}
+\usepackage{array}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0097}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{6.1}
+\newcommand{\topic}{GCF and Factoring by Grouping}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+%\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+%\newmdtheoremenv{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Create bars around subsubsection
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+   
+%%%%%%%%%%%%%%%%%%%%%%%
+% Create line break after definition label
+%%%%%%%%%%%%%%%%%%%%%%%   
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {}{}%\itshape
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newmdtheoremenv{definition}{Definition}[subsection]
+\theoremstyle{break}
+\newtheorem{example}{Example}[subsection]
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start document
+% set section, subsection (use n-1 for sub)
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\setcounter{section}{6}
+\setcounter{subsection}{0}
+
+\subsection{GCF and Factoring by Grouping}
+
+\vspace{.15in}
+\begin{definition}[Factor]
+Factoring a polynomial means to express it as the product of prime (or irreducible) polynomials. Essentially, un-distribute.
+\end{definition}
+\vspace{.15in}
+
+For example, we could rewrite the following polynomial in factored form as:
+\[12x^3 - 4x^2 = 4x^2(3x-1)\]
+\\
+If we were to work backward, we would distribute the $4x^2$ to the $3x-1$ and would end up with $12x^3 - 4x^2$.\\
+
+There are many methods of factoring which will be covered in this chapter. The specific method that we use depends on exactly what we are trying to factor. Some methods will always work, some will work for certain polynomials, but not for others.\\
+
+The most fundamental method of factoring is the \textbf{GCF} method - \textbf{G}reatest \textbf{C}ommon \textbf{F}actor.
+
+\begin{example}
+Find the GCF of $18x^3$ and $15x^2$.
+\vspace{1.25in}
+\end{example}
+
+\begin{example}
+Find the GCF of $-20x^2$, $12x^4$, and $40x^3$.
+\end{example}
+
+\newpage
+
+\begin{example}
+Find the GCF of $x^4y$, $x^3y^2$, and $x^2y$.
+\vspace{1.25in}
+\end{example}
+
+\begin{mdframed}
+\textbf{Factoring with the GCF}
+\begin{enumerate}
+\item Identify the GCF of all terms.
+\item Divide all terms by the GCF.
+\item Write the GCF in front of the remaining polynomial.
+\end{enumerate}
+\end{mdframed}
+
+\vspace{.15in}
+
+\begin{example}
+Factor $6x^2 + 18$
+\vspace{1in}
+\end{example}
+
+\begin{example}
+Factor $25x^2 + 35x^3$
+\vspace{1.25in}
+\end{example}
+
+\begin{example}
+Factor $15x^5 + 12x^4 - 27x^3$
+\end{example}
+
+\newpage
+
+\begin{example}
+Factor $8x^3y^2 - 14x^2y + 2xy$
+\vspace{1.25in}
+\end{example}
+
+\begin{example}
+Factor $-16a^4b^5 + 24a^3b^4 - 20ab^2$
+\vspace{1.5in}
+\end{example}
+
+\subsubsection*{Factoring by Grouping}
+We can factor out \emph{any} polynomial factor, not just a monomial GCF.
+\vspace{.15in}
+For example, say we have $x^2(x+3) + 5(x+3)$. We have a common factor between each - $(x+3)$. This can be treated the same as any GCF and can be factored out to the front, giving us $(x+3)(x^2+5)$. This method is essentially the inverse of the FOIL method that we learned in chapter 5.
+\vspace{.15in}
+
+\begin{mdframed}
+\textbf{Factoring by Grouping}
+\begin{enumerate}
+\item Group terms that have a common monomial factor - typically 2 groups.
+\item Factor the GCF from each group.
+\item Factor out the remaining binomial factor.
+\end{enumerate}
+\end{mdframed}
+
+\newpage
+
+\begin{example}
+Factor $x^3 + 5x^2 + 2x + 10$
+\vspace{2.25in}
+\end{example}
+
+\begin{example}
+Factor $xy + 3x - 5y - 15$
+\vspace{2.25in}
+\end{example}
+
+\begin{example}
+Factor $10x^2 - 12xy + 35xy - 42y^2$
+\end{example}
+\end{document}

@@ -1,0 +1,175 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+% adds in \varnothing for empty set
+\usepackage{amssymb}
+% adds in formated SI units
+%\usepackage{siunitx}
+\usepackage{pgfplots}
+\usepackage{multirow}
+\usepackage{array}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0097}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{6.2}
+\newcommand{\topic}{Factoring Trinomials with Leading Coefficient 1}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+%\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+%\newmdtheoremenv{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Create bars around subsubsection
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+   
+%%%%%%%%%%%%%%%%%%%%%%%
+% Create line break after definition label
+%%%%%%%%%%%%%%%%%%%%%%%   
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {}{}%\itshape
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newmdtheoremenv{definition}{Definition}[subsection]
+\theoremstyle{break}
+\newtheorem{example}{Example}[subsection]
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start document
+% set section, subsection (use n-1 for sub)
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\setcounter{section}{6}
+\setcounter{subsection}{1}
+
+\subsection{Factoring Trinomials with Leading Coefficient 1}
+
+\vspace{.15in}
+If we have a polynomial of the form $x^2 + bx + c$, we can try to factor it using the "product-sum" method.
+\\
+Say that we have a factored polynomial written as $(x+r_1)(x+r_2)$. We can FOIL this product and make a comparison with $x^2 + bx + c$.
+\\
+\begin{eqnarray*}
+(x+r_1)(x+r_2) &=& x^2 + r_2x + r_1x + r_1r_2\\
+&=& x^2 + (r_1+r_2)x + r_1r_2\\
+&=& x^2 + bx + c
+\end{eqnarray*}
+
+Looking at the above work, we can determine that $b = r_1 + r_2$ and $c = r_1r_2$. This gives us the "product-sum" method of factoring.
+\\
+\begin{mdframed}
+\textbf{Factoring with "Product-Sum"}
+\begin{enumerate}
+\item Find two numbers that multiply to $c$ and that add to $b$.
+\item Determine the signs of each.
+\item Write as the product of two binomials.
+\end{enumerate}
+\end{mdframed}
+
+\vspace{.15in}
+
+\begin{example}
+Factor $x^2 + 5x + 6$
+\vspace{1.25in}
+\end{example}
+
+\begin{example}
+Factor $x^2 - 6x + 8$
+\end{example}
+
+\newpage
+
+\begin{example}
+Factor $x^2 + 3x - 10$
+\vspace{1.25in}
+\end{example}
+
+\begin{example}
+Factor $x^2 + x - 7$
+\vspace{1.25in}
+\end{example}
+
+\begin{example}
+Factor $x^2 - 4xy + 3y^2$
+\vspace{2in}
+\end{example}
+
+\noindent Multiple types of factoring can be combined. In almost every case of factoring, you should attempt the GCF method first and then apply some other method.
+\vspace{.15in}
+
+\begin{example}
+Factor completely: $2x^3 + 6x^2 - 56x$
+\vspace{1.5in}
+\end{example}
+
+\begin{example}
+Factor completely: $-2y^2 - 10y + 28$
+\end{example}
+\end{document}

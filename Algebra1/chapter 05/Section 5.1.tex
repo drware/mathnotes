@@ -1,0 +1,256 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{systeme}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{eulervm}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{thmtools}
+\usepackage{etoolbox}
+%\usepackage{fouriernc}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[explicit]{titlesec}
+% adds in \varnothing for empty set
+\usepackage{amssymb}
+% adds in formated SI units
+%\usepackage{siunitx}
+\usepackage{pgfplots}
+\usepackage{multirow}
+\usepackage{array}
+
+\pagestyle{headandfoot}
+\runningfootrule
+\firstpageheadrule
+\runningheadrule
+
+\newcommand{\class}{Math 0097}
+\newcommand{\sem}{2211}
+\newcommand{\due}{}
+\newcommand{\sect}{5.1}
+\newcommand{\topic}{Adding and Subtracting Polynomials}
+
+\firstpageheader{\class}{\sect - \topic}{}
+\runningheader{\class}{\sect - \topic}{}
+\firstpagefooter{\class}{}{Page \thepage\ of \numpages}
+\runningfooter{\class}{}{Page \thepage\ of \numpages}
+
+\newif\ifprintselected
+\printselectedtrue
+%\printselectedfalse
+
+\newenvironment{select}
+{\ifprintselected
+	\printanswers
+	\fi
+}
+{}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+%\newtheorem{example}{Example}[subsection]
+%\newtheorem{definition}{Definition}
+%\newmdtheoremenv{definition}{Definition}[subsection]
+%\newmdtheoremenv{example}{Example}[subsection]
+\AtBeginEnvironment{defn}{\begin{minipage}{\textwidth}}
+\AtEndEnvironment{defn}{\end{minipage}}
+%\AtBeginEnvironment{example}{\begin{minipage}{\textwidth}}
+%\AtEndEnvironment{example}{\end{minipage}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\setlength{\gridsize}{5mm}
+\setlength{\gridlinewidth}{0.1pt}
+
+\printanswers
+\DeclareMathSizes{12}{12}{12}{12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Create bars around subsubsection
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\subsubsection}
+   {\large\bfseries}% format
+   {}% label
+   {0pt}% sep
+   {\titlerule \vspace{.1in} #1}% before code
+      [{\titlerule[0.4pt]\vspace{.1in}}]% after code
+\titlespacing{\subsubsection}
+   {0pt}% left
+   {0pt}% before sep
+   {\baselineskip}% after sep
+   
+%%%%%%%%%%%%%%%%%%%%%%%
+% Create line break after definition label
+%%%%%%%%%%%%%%%%%%%%%%%   
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {}{}%\itshape
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newmdtheoremenv{definition}{Definition}[subsection]
+\theoremstyle{break}
+\newtheorem{example}{Example}[subsection]
+
+%%%%%%%%%%%%%%%%%%%%%%
+% start document
+% set section, subsection (use n-1 for sub)
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\setcounter{section}{5}
+\setcounter{subsection}{0}
+
+\subsection{Adding and Subtracting Polynomials}
+
+\vspace{.15in}
+
+\begin{definition}[Polynomial]
+A collection of one or more algebraic terms containing \emph{whole number exponents} is considered a polynomial. Standard form of a polynomial is to write the terms in \emph{descending order} of exponents.
+\end{definition}
+\vspace{.15in}
+
+\begin{definition}[Degree]
+The largest exponent of a polynomial is the \emph{degree} of the polynomial and determines both the general shape and behavior of the graph. It also determines the \emph{maximum} number of times the graph may cross the $x$-axis.
+\end{definition}
+\vspace{.15in}
+
+\begin{mdframed}
+\textbf{Specific Polynomials}
+\begin{itemize}
+\item Monomial: a single term polynomial such as $2x^3, -4x, 3$
+\item Binomial: a two-termed polynomial such as $2x^3 + 4, -3x^2 - 2x, x+1$
+\item Trinomial: a three-termed polynomial such as $2x^2-x+4$
+\end{itemize}
+\end{mdframed}
+
+\begin{example}
+Identify the degree of each of the following polynomials:
+\begin{enumerate}
+\item $2x^2 - 4x + 1$
+\vspace{.25in}
+\item $-4x^{13}+\sqrt{3}x^7 - 4x + 5$
+\vspace{.25in}
+\item $2x + 4$
+\vspace{.25in}
+\item $-7$
+\vspace{.25in}
+\end{enumerate}
+\end{example}
+
+\newpage
+
+\subsubsection*{Adding Polynomials}
+\vspace{.15in}
+When adding polynomials, we just combine like terms as normal. Be sure that the exponents match - if they do not, they are not like terms. It does not matter what the \emph{degree} of the polynomials are. Two or more polynomials of any degree can be added together as long as like terms are matched.
+\vspace{.15in}
+
+\begin{example}
+Add the following polynomials:
+\[(-11x^3 + 7x^2 - 11x - 5) + (16x^3 - 3x^2 + 3x - 15)\]
+\vspace{1.5in}
+\end{example}
+
+\begin{example}
+Add the following polynomials, but arrange them vertically like you would with systems of equations.
+
+\[(-9x^3 + 7x^2 - 5x + 3) + (13x^3 + 2x^2 - 8x - 6)\]
+
+\end{example}
+
+\newpage
+
+\subsubsection*{Subtracting Polynomials}
+\vspace{.15in}
+Subtracting polynomials works just like adding polynomials. The only difference is that we will need to distribute the negative (subtraction) to each of the terms in the second polynomial, then we add like normal.
+\vspace{.15in}
+
+\begin{example}
+Subtract the following two polynomials.
+\[(9x^2 + 7x - 2) - (2x^2 - 4x - 6)\]
+\vspace{1.15in}
+\end{example}
+
+\begin{example}
+Subtract the following two polynomials.
+\[(10x^3 - 5x^2 + 7x - 2) - (3x^3 - 8x^2 - 5x + 6)\]
+\vspace{1.15in}
+\end{example}
+
+\begin{example}
+Subtract the following two polynomials.
+\[(8y^3 - 10y^2 - 14y - 2) - (5y^3 + 3y + 6)\]
+\end{example}
+
+\newpage
+
+\subsubsection*{Graphing Polynomials}
+\vspace{.15in}
+Graphing linear equations required a minimum of two points. For a general polynomial though, we need more than two. Use at least one more than whatever the degree of the polynomial is, depending on what values you choose.
+\vspace{.15in}
+
+\begin{example}
+Graph the equation $y = x^2 - 1$.
+\vfill
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.7\linewidth,
+  axis lines=middle,
+  grid,
+  ymin=-6,
+  ymax=6,
+  ytick={-5,...,5},
+  yticklabels={,,},
+  ylabel={y},
+  xmin=-6,
+  xmax=6,
+  xtick={-5,...,5},
+  xticklabels={,,},
+  xlabel={x}]
+
+\addplot[draw=none] coordinates {(1,1)};
+\end{axis}
+\end{tikzpicture}
+\end{figure}
+\end{example}
+
+\newpage
+
+\begin{example}
+Graph the equation $y = x^3 + 2x - 1$.
+\vfill
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.7\linewidth,
+  axis lines=middle,
+  grid,
+  ymin=-11,
+  ymax=11,
+  ytick={-10,...,10},
+  yticklabels={,,},
+  ylabel={y},
+  xmin=-11,
+  xmax=11,
+  xtick={-10,...,10},
+  xticklabels={,,},
+  xlabel={x}]
+
+\addplot[draw=none] coordinates {(1,1)};
+\end{axis}
+\end{tikzpicture}
+\end{figure}
+\end{example}
+
+\end{document}
